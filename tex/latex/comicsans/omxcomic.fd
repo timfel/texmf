@@ -1,0 +1,17 @@
+%Filename: omxcomic.fd
+%Created by: tex fontcomic
+%Created using fontinst v1.928
+
+%THIS FILE SHOULD BE PUT IN A TEX INPUTS DIRECTORY
+
+\ProvidesFile{omxcomic.fd}
+   [2007/02/09 Fontinst v1.928 font definitions for OMX/comic.]
+
+\DeclareFontFamily{OMX}{comic}{}
+
+\DeclareFontShape{OMX}{comic}{m}{n}{
+   <-> comic7v
+}{}
+
+
+\endinput

@@ -1,0 +1,16 @@
+This is the package thmbox. It provides a fancy formatting of theorem-like
+environments with boxes around them, and a few auxiliary features.
+
+To extract the package file, just type
+
+	latex thmbox.ins
+
+which will produce the file thmbox.sty. Once this is done, you can get
+documentation by compiling the source using
+
+	latex thmbox.dtx
+
+Enjoy!
+
+This package is written by Emmanuel Beffara, it released under the terms of
+the LaTeX Project Public License (LPPL).

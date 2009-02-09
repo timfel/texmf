@@ -1,0 +1,1 @@
+/home/tim/Übungen/projekt-mod/texmf/tex/latex/base/feinentwurf.cls

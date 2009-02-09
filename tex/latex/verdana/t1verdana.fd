@@ -1,0 +1,17 @@
+\ProvidesFile{t1verdana.fd}[Verdana from mscorefonts]
+
+\DeclareFontFamily{T1}{verdana}{}
+
+\DeclareFontShape{T1}{verdana}{b}{n}{<->ecverdanab}{}
+\DeclareFontShape{T1}{verdana}{b}{sl}{<-> ecverdanabo}{}
+\DeclareFontShape{T1}{verdana}{b}{it}{<-> ecverdanaz}{}
+
+\DeclareFontShape{T1}{verdana}{m}{n}{<-> ecverdana}{}
+\DeclareFontShape{T1}{verdana}{m}{sl}{<-> ecverdanao}{}
+\DeclareFontShape{T1}{verdana}{m}{it}{<-> ecverdanai}{}
+
+\DeclareFontShape{T1}{verdana}{bx}{n}{<->ssub * tnr/b/n}{}
+\DeclareFontShape{T1}{verdana}{bx}{sl}{<->ssub * tnr/b/sl}{}
+\DeclareFontShape{T1}{verdana}{bx}{it}{<->ssub * tnr/b/it}{}
+
+\endinput
