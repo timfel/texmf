@@ -1,0 +1,241 @@
+%%
+%% This is file `xfrac.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% xfrac.dtx  (with options: `package')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2004, 2008 by Morten Hoegholm <mh.ctan@gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3 of this license or (at your option) any later
+%% version. The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of
+%% LaTeX version 2005/12/01 or later.
+%% 
+%% This work has the LPPL maintenance status "maintained".
+%% 
+%% This Current Maintainer of this work is Morten Hoegholm.
+%% 
+%% This work consists of the main source file xfrac.dtx
+%% and the derived files
+%%    xfrac.sty, xfrac.pdf, xfrac.ins, xfrac.drv.
+%% 
+\RequirePackage{l3names}[2007/09/01]
+\ProvidesExplPackage{xfrac}{2008/08/04}{0.2}{Text fractions}
+\RequirePackage{textcomp,graphicx,amstext}
+\RequirePackage{template}[2008/08/03] % force upgrade!!
+\RequirePackage{xparse}[2008/08/03] % force upgrade!!
+\bool_new:N \g_cm_recommended_bool
+\DeclareOption{cm-recommended}
+              { \bool_gset_true:N \g_cm_recommended_bool }
+\DeclareOption{cm-standard}
+              { \bool_gset_false:N \g_cm_recommended_bool }
+\ExecuteOptions{cm-recommended}
+\ProcessOptions\relax
+\box_new:N \l_xfrac_temp_box
+\box_new:N \l_xfrac_slash_box
+\DeclareTemplateType{xfrac}{3}
+\DeclareTemplate{xfrac}{text}{3}{
+  numerator-font      = n  [\f@family]  \xfrac_numeratorfont:,
+  numerator-format    = f1 [#1]         \xfrac_numeratorformat:n,
+  slash-symbol        = n  [\textfractionsolidus]
+                                        \xfrac_slashsymbol:,
+  slash-symbol-font   = n  [\f@family]  \xfrac_slashsymbolfont:,
+  slash-symbol-format = f1 [#1]         \xfrac_slashsymbolformat:n,
+  denominator-font    = n  [\f@family]  \xfrac_denominatorfont:,
+  denominator-format  = f1 [#1]         \xfrac_denominatorformat:n,
+  h-scale             = n  [1]          \xfrac_hscale:,
+  v-scale             = n  [1]          \xfrac_vscale:,
+  scale-factor        = n  [.83333]     \xfrac_scalefactor:,
+  scale-relative      = s  [true]
+    { \def:Npn \xfrac_relscale: {\box_ht:N\l_xfrac_slash_box}}
+    { \def:Npn \xfrac_relscale: {
+      \dim_eval:n { \box_ht:N\l_xfrac_temp_box + \box_dp:N\l_xfrac_temp_box }} },
+  scaling             = s  [true]
+    {\def:Npn\xfrac_fontscale: {
+       \fontsize{\xfrac_scalefactor: \xfrac_relscale:}{\c_zero_dim}\selectfont}}
+    { \let:NN \xfrac_fontscale: \use_noop: },
+  numerator-top-sep   = L  [\c_max_dim]  \l_xfrac_numeratortopsep_fdim,
+  numerator-bot-sep   = L  [\c_max_dim]  \l_xfrac_numeratorbotsep_fdim,
+  denominator-bot-sep = L  [\c_max_dim]  \l_xfrac_denominatorbotsep_fdim,
+  slash-right-kern    = L  [0pt]        \l_xfrac_slashrightsep_fdim,
+  slash-left-kern     = L  [0pt]        \l_xfrac_slashleftsep_fdim,
+  slash-right-mkern   = n  [-2mu]       \l_xfrac_slashrightmsep_fmu,
+  slash-left-mkern    = n  [-1mu]       \l_xfrac_slashleftmsep_fmu,
+  math-mode           = s  [false] { \let:NN\xfrac_math: \ensuremath }
+                                   { \let:NN \xfrac_math: \use_arg_i:n },
+  phantom             = n  [8]          \xfrac_phantom:,
+}{
+  \DoParameterAssignments
+  \mode_if_math:TF{
+    \let:NN \xfrac_textormath: \text
+    \def:Npx \xfrac_slashfontchange: {\tex_fam:D \xfrac_slashsymbolfont: }
+    \def:Npx \xfrac_numeratorfontchange: {\tex_fam:D \xfrac_numeratorfont: }
+    \def:Npx \xfrac_denominatorfontchange: {\tex_fam:D \xfrac_denominatorfont: }
+  }{
+    \let:NN \xfrac_textormath: \mbox
+    \def:Npn\xfrac_slashfontchange: {
+      \fontfamily{\xfrac_slashsymbolfont: }\selectfont}
+    \def:Npn\xfrac_numeratorfontchange: {
+      \fontfamily{\xfrac_numeratorfont: }\selectfont}
+    \def:Npn\xfrac_denominatorfontchange: {
+      \fontfamily{\xfrac_denominatorfont: }\selectfont}
+  }
+  \xfrac_textormath: {
+    \m@th
+    \sbox\l_xfrac_temp_box {\xfrac_math: {\vphantom{(}}}
+    \sbox\l_xfrac_slash_box {
+      \xfrac_math: {
+        \xfrac_slashsymbolformat:n {
+          \xfrac_math: {
+            \xfrac_slashfontchange:
+              \IfValueTF{#2}{#2}{\xfrac_slashsymbol: }
+          }
+        }
+      }
+    }
+    \dim_compare:nNnTF \l_xfrac_numeratortopsep_fdim = \c_max_dim
+    {
+      \dim_compare:nNnTF \l_xfrac_numeratorbotsep_fdim = \c_max_dim
+      {
+        \def:Npn\xfrac_next: {\raisebox{\box_ht:N\l_xfrac_slash_box
+                                  -\box_dp:N\l_xfrac_slash_box-\height}}
+      }{
+        \def:Npn\xfrac_next: {\raisebox{\l_xfrac_numeratorbotsep_fdim }}
+      }
+    }
+    {
+      \dim_compare:nNnTF \l_xfrac_numeratorbotsep_fdim = \c_max_dim
+      {
+        \def:Npn\xfrac_next: {
+          \raisebox{
+            \box_ht:N\l_xfrac_slash_box - \l_xfrac_numeratortopsep_fdim
+            - \height
+          }
+        }
+      }
+      {
+        \PackageError{xfrac}
+          {You~ have~ specified~ both~ numerator-top-sep~ and~
+          numerator-bot-sep}
+          {I~ will~ pretend~ you~ didn't~ specify~ any~ of ~them}
+        \def:Npn\xfrac_next: {\raisebox{\box_ht:N\l_xfrac_slash_box
+                                  -\box_dp:N\l_xfrac_slash_box-\height}}
+      }
+    }
+    \xfrac_next: {
+      \xfrac_fontscale:
+      \xfrac_numeratorformat:n {
+        \scalebox{\xfrac_hscale: }[\xfrac_vscale: ]
+          { \xfrac_math:{ \xfrac_numeratorfontchange:
+                          {\vphantom{\xfrac_phantom: }#1} } }
+      }
+    }
+    \xfrac_math: { % THIS IS JUST WRONG!
+      \mode_if_math:TF {  \mskip \l_xfrac_slashrightmsep_fmu }
+                       {\hskip \l_xfrac_slashrightsep_fdim}
+      }
+    \usebox\l_xfrac_slash_box
+    \xfrac_math: {
+      \mode_if_math:TF {
+        \mskip \l_xfrac_slashleftmsep_fmu
+      }{
+        \hskip \l_xfrac_slashleftsep_fdim
+      } }
+    \dim_compare:nNnTF \l_xfrac_denominatorbotsep_fdim=\c_max_dim
+    {  \raisebox{-\box_dp:N \l_xfrac_slash_box} }
+    {
+     \raisebox{\l_xfrac_denominatorbotsep_fdim}
+    }
+    {
+      \xfrac_fontscale:
+      \xfrac_denominatorformat:n {
+        \scalebox{\xfrac_hscale:}[\xfrac_vscale:]
+          { \xfrac_math: { \xfrac_denominatorfontchange:
+                          {\vphantom{\xfrac_phantom: }#3} } }
+      }
+    }
+  }
+}
+\DeclareRestrictedTemplate{xfrac}{math}{text}{
+  numerator-font      = \number\fam,
+  slash-symbol        = /,
+  slash-symbol-font   = \number\fam,
+  denominator-font    = \number\fam,
+  scale-factor        = 0.7,
+  scale-relative      = false,
+  scaling             = true,
+  numerator-top-sep   = 0pt,
+  denominator-bot-sep = 0pt,
+  math-mode           = true,
+  phantom             = (,
+}
+\DeclareInstance{xfrac}{default}{text}{ }
+\DeclareInstance{xfrac}{mathdefault}{math}{ }
+\DeclareCollectionInstance{plainmath}{xfrac}{mathdefault}{math}{
+  denominator-bot-sep=0pt,
+  numerator-bot-sep=0pt,
+  numerator-top-sep=\c_max_dim,
+  scale-factor = 1,
+  scale-relative = false,
+  scaling = true,
+  slash-right-mkern=0mu,
+  slash-left-mkern=0mu,
+}
+\DeclareInstance{xfrac}{cmr}{text}{
+  denominator-bot-sep=0pt,
+  numerator-top-sep=\DelayEvaluation{.2ex},
+  slash-left-kern=\DelayEvaluation{-.1em},
+  slash-right-kern=\DelayEvaluation{-.1em},
+}
+\DeclareInstance{xfrac}{cmss}{text}{
+  denominator-bot-sep=0pt,
+  numerator-top-sep=\DelayEvaluation{.2ex},
+  slash-left-kern=\DelayEvaluation{-.1em},
+  slash-right-kern=\DelayEvaluation{-.1em},
+}
+\DeclareInstance{xfrac}{cmtt}{text}{
+  denominator-bot-sep=0pt,
+  numerator-top-sep=\DelayEvaluation{.2ex},
+  slash-left-kern=\DelayEvaluation{-.1em},
+  slash-right-kern=\DelayEvaluation{-.1em},
+}
+\DeclareCollectionInstance{cm-recommended}{xfrac}{cmr}{text}{
+  slash-symbol-font   = ptm,
+}
+\DeclareCollectionInstance{cm-recommended}{xfrac}{cmss}{text}{
+  slash-symbol-font   = ptm,
+}
+\DeclareCollectionInstance{cm-recommended}{xfrac}{cmtt}{text}{
+  slash-symbol-font   = ppl,
+}
+\bool_if:NT \g_cm_recommended_bool
+               {\UseCollection{xfrac}{cm-recommended}}
+\DeclareDocumentCommand \sfrac {o mom}{
+  \mode_if_math:TF
+{
+    \def:Npx \xfrac_next: {mathfam\number\fam}
+    \IfExistsInstanceTF{xfrac}{\xfrac_next: }
+    {\UseInstance{xfrac}{\xfrac_next: }}
+    {\UseInstance{xfrac}{mathdefault}}
+    {#2}{#3}{#4}
+}
+{
+    \IfExistsInstanceTF{xfrac}{#1}
+    {\UseInstance{xfrac}{#1}{#2}{#3}{#4}}
+    {\IfExistsInstanceTF{xfrac}{\f@family}
+      {\UseInstance{xfrac}{\f@family}}
+      {\UseInstance{xfrac}{default}}
+        {#2}{#3}{#4}
+    }
+  }
+}
+\endinput
+%%
+%% End of file `xfrac.sty'.
