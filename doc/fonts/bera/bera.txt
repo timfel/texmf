@@ -1,0 +1,117 @@
+============================================================
+              Using the Bera fonts with LaTeX
+============================================================
+                                                  2004-09-07
+                                              Walter Schmidt
+                                         w.a.schmidt@gmx.net
+                                         
+"Bera" is a set of three PostScript Type1 font families:
+Bera Serif (a slab-serif Roman), Bera Sans (a "Frutiger
+descendant") and Bera Mono (monospaced/typewriter).
+
+
+USING SINGLE FONT FAMILIES
+
+Several macro packages are provided to use these font
+families with LaTeX:
+
+package:  effect:    
+------------------------------------------------------------
+beraserif selects Bera Serif as the default roman family
+berasans  selects Bera Sans as the default sansserif family
+beramono  selects Bera Mono as the default typewriter family
+
+You need not necessarily use all three font families
+together (even though this is supported, see below).  
+Bera Sans blends well with many roman typefaces, as long as
+their x-height is not too low.  Bera Mono is a versatile
+"all-purpose" monospaced typeface, whose advantage over
+CM-Typewriter is the availability of a bold font series.
+
+Notice that the Bera fonts are supported with T1 (european)
+and TS1 (textcompanion) encoding only, so you should issue
+the commands
+
+  \usepackage[T1]{fontenc}
+  \usepackage{textcomp}
+
+in the document preamble.  The obsolete OT1 encoding, which
+is still the default with LaTeX, is _not_ supported.
+
+The Bera fonts are much larger than many others, when used
+at the same nominal size.  This can be fixed by loading the
+above package so with the option [scaled=...].  For
+instance,
+
+  \usepackage[scaled=0.95]{berasans}
+  
+loads the Bera Sans fonts, scaled down to 95% of their 
+"natural" size.  Omitting the factor, i.e.,
+
+  \usepackage[scaled]{...}
+  
+selects a default scaling of 90%, which makes the Bera fonts
+approximately match the size of the Computer Modern fonts.
+
+
+USING THE BERA FONT FAMILIES TOGETHER
+
+To make the use of the three Bera fonts families together
+most easy, a further macro package bera.sty is provided:
+
+  \usepackage{bera}
+
+effects all of the following:
+
+* T1 and textcompanion encoding is selected
+
+* Bera Roman, Sans and Mono at 90% are loaded as the three 
+  main text font families (while the math fonts remain 
+  unchanged!)
+  
+* the line spacing is enlarged by 5%, i.e.,
+  \linespread{1.05}, with respect to the large x-height of
+  the Bera typefaces;
+  
+* the definitions of the TeX and LaTeX logos \TeX and \LaTeX
+  are changed so as to suit BeraSerif.
+  
+Even though there are no math fonts that were designed
+particularly to go with Bera Serif, math typesetting is
+possible.  It is recommended to use the the math fonts of
+Y&Y's Lucida font set <http://www.yandy.com/lucida.htm>,
+which blend surprisingly well with Bera.  Notice that the
+Lucida math fonts are to be scaled correspondingly:
+
+  \usepackage{bera}
+  \usepackage[expert]{lucbmath}
+  \def\DeclareLucidaFontShape#1#2#3#4#5#6{%
+    \DeclareFontShape{#1}{#2}{#3}{#4}{<->s*[0.90]#5}{#6}}
+   
+
+
+
+NFSS CLASSIFICATION
+
+encodings  family  series  shape(s)  Postscript font name
+---------------------------------------------------------
+T1, TS1    fve     m       n, sl(*)  BeraSerif-Roman
+T1, TS1    fve     b       n, sl(*)  BeraSerif-Bold
+T1, TS1    fvs     m       n, sl     BeraSans-Roman
+                                     BeraSans-Oblique
+T1, TS1    fvs     b       n, sl     BeraSans-Bold
+                                     BeraSans-BoldOblique
+T1, TS1    fvm     m       n, sl     BeraSansMono-Roman
+                                     BeraSansMono-Oblique
+T1, TS1    fvm     b       n, sl     BeraSansMono-Bold
+                                     BeraSansMono-BoldOb
+
+(*) The slanted series of the Bera Serif fonts are 
+artificially slanted; there are no correspoding real fonts.
+
+In the TS1 encoding only the characters of the ISO-Adobe
+character set plus the Euro (\texteuro) and the Omega
+(\textomega) are available.
+
+
+== finis
