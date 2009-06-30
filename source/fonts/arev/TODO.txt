@@ -1,0 +1,13 @@
+% upright Greek? Not italicize var and orig capital Greek?
+% over and under braces and square roots from mdbch are flawed.
+% fix undefined small caps in text !!!!
+% fix undefined glyphs: perthousandzero, dotlessj, Eng, eng in text fonts
+% fix undefined ligatures: rangedash, punctdash in math fonts
+% Arev Sans has wider leading than Bitstream Vera Sans? -- where is this set in FontForge?  TTF values?  Does that affect Postscript fonts?
+%   also the underline position and height--compare to Bera Sans. -- ask on FontForge mailing list
+% More efficient to get script font from OMS font instead of loading a separate math alphabet?  This would require putting the script font into the OMS virtual font.
+% fix horizontal placement of math accents for the original characters (ie, the var ones in the virtual font work). This might not be possible since I don't know that TeX allows kerning between fonts.  Would require the math accents being applied to the unencoded fonts.
+% Make a script that parses the final encoding of the virtual fonts (probably outputted in etx form) and creates macros for the numeric positions of each glyph.  This would symplify adding new characters in arevmath.sty, since then glyph position changes in glyphlist* would not change the macro commands.
+
+% Add space to left sidebearing of italic f (florin) in math-mode, so it doesn't hit delimiters.
+% Why do theorem headings not have bold labels?

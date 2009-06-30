@@ -1,0 +1,56 @@
+#!/bin/bash
+# makefontfiles to create all files for using Arev Sans in LaTeX
+
+# we assume this script is being run from the directory where all the files are
+
+# Directory where Arev Sans sfd files are
+ArevDir=ArevReleases/R0.21a
+
+# Convert Arev Sans from sfd format to Type 1
+./convert-ff $ArevDir
+
+#Create kerning data file for adjusting math accents from Arev sfd files
+./createkerndata $ArevDir
+
+# Create .pl files from .tfm files for Math Design Bitstream Charter fonts
+tftopl md-chb7t.tfm md-chb7t.pl
+tftopl md-chb7m.tfm md-chb7m.pl
+tftopl md-chb7y.tfm md-chb7y.pl
+
+# Run fontinst script
+tex arevfontinst
+
+# Create .tfm and .vf files for virtual fonts
+
+# Arev Sans for text
+pltotf favr8r.pl favr8r.tfm
+pltotf favri8r.pl favri8r.tfm
+pltotf favb8r.pl favb8r.tfm
+pltotf favbi8r.pl favbi8r.tfm
+vptovf favr8t.vpl favr8t.vf favr8t.tfm
+vptovf favri8t.vpl favri8t.vf favri8t.tfm
+vptovf favb8t.vpl favb8t.vf favb8t.tfm
+vptovf favbi8t.vpl favbi8t.vf favbi8t.tfm
+
+# Arev Sans for math
+vptovf zavmr7t.vpl zavmr7t.vf zavmr7t.tfm
+vptovf zavmb7t.vpl zavmb7t.vf zavmb7t.tfm
+pltotf favmr7t.pl  favmr7t.tfm
+pltotf favmb7t.pl  favmb7t.tfm
+
+vptovf zavmri7m.vpl zavmri7m.vf zavmri7m.tfm
+vptovf zavmbi7m.vpl zavmbi7m.vf zavmbi7m.tfm
+pltotf favmri7m.pl  favmri7m.tfm
+pltotf favmbi7m.pl  favmbi7m.tfm
+
+vptovf zavmr7y.vpl zavmr7y.vf zavmr7y.tfm
+pltotf favmr7y.pl  favmr7y.tfm
+
+# Parse .enc files to get positions of extra symbols
+echo "Generating symbols file"
+egrep -v '%|\[|\]|\.' arevoml.enc | ./enctofontpos glyphlistoml.tex extraitalic > arevsymbols.tex
+egrep -v '%|\[|\]|\.' arevoms.enc | ./enctofontpos glyphlistoms.tex extraup >> arevsymbols.tex
+
+# Clean up
+echo "Cleaning up"
+rm *.vpl *.pl map*.tex fav*.mtx ArevSans*.mtx md*.mtx

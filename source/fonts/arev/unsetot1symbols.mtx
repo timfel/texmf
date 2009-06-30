@@ -1,0 +1,14 @@
+% unset +,=,(,),[,] in OT1 so that they can be taken from the same font that has the other geometric math symbols
+
+\relax
+\metrics
+
+\unsetglyph{plus}
+\unsetglyph{equal}
+
+\unsetglyph{parenleft}
+\unsetglyph{parenright}
+\unsetglyph{bracketleft}
+\unsetglyph{bracketright}
+
+\endmetrics

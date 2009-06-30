@@ -1,0 +1,65 @@
+#!/bin/bash
+
+# Bash script to make glyph list from afm file.
+# The glyph list is then used in making the etx file and for reglyphing.
+
+# SYNTAX:
+# afmtoglyphlist AfmFile GlyphListFile EncFile
+
+# The EncFile is a PostScript encoding vector for dvips.
+# If a glyph name from the AFM file appears in the encoding vector,
+# then the script puts \ok as the second parameter to \declareglyph.
+
+AfmFile=$1
+GlyphList=$2
+EncFile=$3
+
+echo "Creating glyph list $GlyphList from $AfmFile for $EncFile"
+
+MaxLines=`wc -l $AfmFile | cut -d" " -f 1`
+
+echo "  $MaxLines lines in afm file."
+
+LineNum=1
+UnknownGlyph=1
+ProccessingChars=FALSE
+echo "% glyph list $GlyphList " > $GlyphList
+echo "% Created by afmtoglyhlist from $AfmFile for encoding $EncFile" >> $GlyphList
+echo "% on `date`." >> $GlyphList
+while [ $LineNum -le $MaxLines ];
+do
+  Line=`head -n $LineNum $AfmFile | tail -1`
+  #echo "$LineNum: $Line"
+
+  if [ "$ProcessingChars" == "TRUE" ]
+  then
+    if [ "`echo \"$Line\" | grep EndCharMetrics`" != "" ]
+    then
+      ProcessingChars=FALSE
+      LineNum=$((MaxLines+1))
+    else
+      # process a character
+      Char=`echo "$Line" | cut -d" " -f 8`
+      if [ "$Char" != "" ]
+      then
+        if [ "`grep -x '[[:space:]]*/'$Char'[[:space:]]*' $EncFile`" != "" ]
+        then
+          echo '\declareglyph{'$Char'}{\ok}{}{}' >> $GlyphList
+        else
+          echo '\declareglyph{'$Char'}{unknown'$UnknownGlyph'}' >> $GlyphList
+	  UnknownGlyph=$((UnknownGlyph+1))
+        fi
+      fi
+    fi
+
+  else
+    if [ "`echo \"$Line\" | grep StartCharMetrics`" != "" ]
+    then
+      ProcessingChars=TRUE
+    fi
+  fi
+
+  LineNum=$((LineNum+1))
+done
+
+echo "Done."

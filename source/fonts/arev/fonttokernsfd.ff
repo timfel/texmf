@@ -1,0 +1,31 @@
+#!/usr/bin/fontforge
+# taken from MinionPro package
+
+i = 1;
+while (i < $argc)
+  Print("Extracting accentable characters from ", $argv[i], "...");
+  Open($argv[i]);
+  ScaleToEm(1000);  # to standard Postscript sizes, also scales underline value
+
+  SelectAll();  # select all
+  SelectFewer(0u0030,0u0039);   # digits
+  SelectFewer(0u0041,0u005a);   # uppercase Latin
+  SelectFewer(0u0061,0u007a);   # lowercase Latin
+  SelectFewerSingletons(0u00b5);  # mu
+  SelectFewerSingletons(0u0131); # dotlessi
+  SelectFewerSingletons(0u0192); # florin
+  SelectFewerSingletons(0u0237); # dotlessj
+  SelectFewerSingletons(0u0242); # old florin
+  SelectFewer(0u0391,0u03a9);   # uppercase Greek
+  SelectFewer(0u03b1,0u03c9);   # lowercase Greek
+  SelectFewer(0u03d0,0u03d2);   # variant Greek: beta, theta, Upsilon
+  SelectFewer(0u03d5,0u03d6);   # variant Greek: phi, omega
+  SelectFewerSingletons(0u2113); # script l
+  SelectFewerSingletons(0u2118); # weierstrass p
+  SelectFewer(0uebc1,0uebfa);   # additional Latin
+  SelectFewer(0uef11,0uef29);   # additional uppercase Greek
+  Clear();
+
+  Save($fontname+"-kern.sfd");
+  i++
+endloop

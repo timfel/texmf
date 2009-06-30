@@ -1,0 +1,13 @@
+%prosper-header.tex
+
+\setbeamertemplate{navigation symbols}{}
+ 
+\newenvironment{colorenv1}{\color[rgb]{.8,0,0}}{\normalcolor}
+\newcommand<>{\red}[1]{\begin{colorenv1}#1\end{colorenv1}}
+\newenvironment{colorenv2}{\color[rgb]{.7,0,.7}}{\normalcolor}
+\newcommand<>{\purple}[1]{\begin{colorenv2}#1\end{colorenv2}}
+\newenvironment{colorenv3}{\color[rgb]{0,.5,0}}{\normalcolor}
+\newcommand<>{\green}[1]{\begin{colorenv3}#1\end{colorenv3}}
+\newenvironment{colorenv4}{\color[rgb]{0,0,.8}}{\normalcolor}
+\newcommand<>{\blue}[1]{\begin{colorenv4}#1\end{colorenv4}}
+

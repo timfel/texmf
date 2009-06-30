@@ -1,0 +1,11 @@
+% fixes weierstrass (which doesn't match Arev Sans) by scaling it to be larger.
+% MathDesign Charter bold weierstrass doesn't match either.
+
+\relax
+\metrics
+
+\resetglyph{weierstrass}
+  \glyph{weierstrass}{1274}
+\endresetglyph
+
+\endmetrics

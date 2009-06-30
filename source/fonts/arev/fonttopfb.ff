@@ -1,0 +1,57 @@
+#!/usr/bin/fontforge
+
+i = 1;
+while (i < $argc)
+  Print("converting ", $argv[i], "...");
+  Open($argv[i]);
+
+  # Arev Sans has too many characters, so fontinst scripts exhaust TeX's memory.
+  # We'll remove ones that we don't need.
+  Select    (0u0100,0u017f); #Latin-extended A
+  SelectMore(0u0180,0u024f); #Latin-extended B
+  SelectMore(0u0250,0u02af); #IPA
+  SelectMore(0u02de,0u02ee); #Spacing modifier letters
+#  SelectMore(0u0300,0u0362); #Combining diacritical marks
+#  SelectMore(0u0384,0u0390); #tonos Greek
+  SelectMore(0u0400,0u04ff); #Cyrillic
+  SelectMore(0u0500,0u05ff); #Cyrillic supplement
+  SelectMore(0u1e00,0u1ef9); #Latin extended additional
+  SelectMore(0u1f00,0u1ffe); #Greek extended
+  SelectMore(0u203b,0u206f); #General punctuation
+  SelectMore(0u2070,0u209f); #Super and sub scripts
+  SelectMore(0u20a0,0u20bf); #Currency symbols
+  SelectMore(0u20d0,0u20ef); #Accents for symbols
+  SelectMore(0u2153,0u218f); #Number forms
+  SelectMore(0u2190,0u21ff); #Arrows
+  SelectMore(0u2236,0u22ff); #Math symbols, mainly relations
+  SelectMore(0u2300,0u232a); #Technical symbols
+  SelectMore(0u2580,0u259f); #Block elements
+#  SelectMore(0u2600,0u267f); #Misc symbols
+#  SelectMore(0u2680,0u26ff); #Symbols
+#  SelectMore(0u2700,0u27bf); #Dingbats
+  SelectMore(0u27e0,0u27ff); #Supplemental arrows
+  SelectMore(0ueb41,0ueb7a); #Latin bars
+  SelectMore(0uee91,0ueef5); #Greek bars
+
+  SelectFewerSingletons(0u0192); # florin
+  SelectFewerSingletons(0u0237); # dotlessj
+  SelectFewerSingletons(0u0131); # dotlessi
+  SelectFewerSingletons(0u0141); # Lslash
+  SelectFewerSingletons(0u0142); # lslash
+  SelectFewerSingletons(0u014a); # Eng
+  SelectFewerSingletons(0u014b); # eng
+  SelectFewerSingletons(0u0152); # OE
+  SelectFewerSingletons(0u0153); # oe
+
+  Clear();
+
+  SetFontOrder(3); # convert from quadratic to cubic curves
+  ScaleToEm(1000);  # to standard Postscript sizes, also scales underline value
+
+  # no default hints for non-Vera characters
+  SelectAll();
+  AutoHint();
+
+  Generate($fontname+".pfb", "", -1);
+  i++;
+endloop

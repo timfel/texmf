@@ -1,0 +1,12 @@
+% resets dotlessi glyph to point to iota
+% this make imath match the new math i
+
+\relax
+\metrics
+
+\resetglyph{dotlessi}
+  \glyph{iota}{1000}
+\endresetglyph
+\resetkern{dotlessi}{tie}{\kerning{iota}{tie}} % fixes math accent horizontal placement
+
+\endmetrics

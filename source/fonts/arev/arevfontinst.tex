@@ -1,0 +1,206 @@
+% arevfontinst.tex
+% (part of the arev package, by Stephen Hartke)
+%
+% Fontinst script
+% to create virtual math fonts from Arev Sans by Tavmjong Bah
+
+\input fontinst.sty
+%\input bbox.sty % bounding box info--for using kerning info to fix horizontal placement of math accents in kernaccents*.mtx
+\needsfontinstversion{1.914}
+
+
+% Messages can be put anywhere in fontinst scripts, including etx and mtx files.
+% Messages are output to the console when TeX is running.
+\message{Running Arev Sans fontinst script.}
+
+
+% Arev Sans (fav) for text
+\recordtransforms{mapfav.tex}
+  \transformfont{favr8r} {\reencodefont{8r}{\fromafm{ArevSans-Roman}}}
+  \transformfont{favri8r}{\reencodefont{8r}{\fromafm{ArevSans-Oblique}}}
+  \transformfont{favb8r} {\reencodefont{8r}{\fromafm{ArevSans-Bold}}}
+  \transformfont{favbi8r}{\reencodefont{8r}{\fromafm{ArevSans-BoldOblique}}}
+\installfonts
+  \installfamily{T1}{fav}{}
+  \installfont{favr8t} {favr8r,latin} {t1}{T1}{fav}{m}{n}{}
+  \installfont{favri8t}{favri8r,latin}{t1}{T1}{fav}{m}{it}{}
+  \installfont{favb8t} {favb8r,latin} {t1}{T1}{fav}{b}{n}{}
+  \installfont{favbi8t}{favbi8r,latin}{t1}{T1}{fav}{b}{it}{}
+\endinstallfonts
+\endrecordtransforms
+
+
+% Arev Sans (favm) for math
+\recordtransforms{mapfavm.tex}
+  \transformfont{favmr7t} {\reencodefont{arevot1}{\fromafm{ArevSans-Roman}}}
+  \transformfont{favmb7t} {\reencodefont{arevot1}{\fromafm{ArevSans-Bold}}}
+  \transformfont{favmri7m}{\reencodefont{arevoml}{\fromafm{ArevSans-Oblique}}}
+  \transformfont{favmbi7m}{\reencodefont{arevoml}{\fromafm{ArevSans-BoldOblique}}}
+  \transformfont{favmr7y} {\reencodefont{arevoms}{\fromafm{ArevSans-Roman}}}
+\endrecordtransforms
+
+
+% Reglyphing of favm fonts (the extra c means custom reencoded)
+
+% rename the glyph if it does not have second parameter \ok
+\let\ok=donotrenamethisglyph
+\let\nomacro=donotmakeamacrocommand
+\def\declareglyph#1#2#3#4%
+{%
+  \def\temptesta{#2}%
+  \def\temptestb{\ok}%
+  \ifx\temptesta\temptestb%
+  \else%
+    \renameglyph{#2}{#1}%
+  \fi%
+}
+
+\input fixkernaccents
+
+\reglyphfonts
+  % don't want curly i and l for operators font!  log and sin look silly.
+  \input glyphlistot1.tex 
+  \reglyphfont{favmr7tc}{favmr7t}
+\endreglyphfonts
+\reglyphfonts
+  \input glyphlistot1.tex
+  \inputmtx{favmr7t}
+  \def\thenewskewchar{dieresis} % Using dieresis for skewchar
+  % setkern commands can be reglyphed, but resetkern and unsetkern commands cannot be.
+  % Thus, the skewchar chosen cannot have any pre-existing kerns.
+  % Accents are usually a safe bet, since they're for composing with other characters and do not appear as a character adjacent to other characters.
+  \reglyphfont{kernaccentsot1c}{kernaccentsot1}
+\endreglyphfonts
+
+\reglyphfonts
+  \input glyphlistot1.tex 
+  \reglyphfont{favmb7tc}{favmb7t}
+\endreglyphfonts
+\reglyphfonts
+  \input glyphlistot1.tex
+  \inputmtx{favmr7t}
+  \def\thenewskewchar{dieresis}
+  \reglyphfont{kernaccentsot1boldc}{kernaccentsot1bold}
+\endreglyphfonts
+
+\reglyphfonts
+  \input glyphlistoml.tex
+  \reglyphfont{favmri7mc}{favmri7m}
+\endreglyphfonts
+\reglyphfonts
+  \input glyphlistoml.tex
+  \inputmtx{favmri7m}
+  \def\thenewskewchar{uni0361} % Using tie for skewchar
+  \reglyphfont{kernaccentsomlc}{kernaccentsoml}
+\endreglyphfonts
+
+\reglyphfonts
+  \input glyphlistoml.tex
+  \reglyphfont{favmbi7mc}{favmbi7m}
+\endreglyphfonts
+\reglyphfonts
+  \input glyphlistoml.tex
+  \inputmtx{favmbi7m}
+  \def\thenewskewchar{uni0361}
+  \reglyphfont{kernaccentsomlboldc}{kernaccentsomlbold}
+\endreglyphfonts
+
+\reglyphfonts
+  \input glyphlistoms.tex
+  \reglyphfont{favmr7yc}{favmr7y}
+\endreglyphfonts
+
+
+% Virtual math fonts for Arev Sans: zavm (z Arev Math)
+\recordtransforms{mapzavm.tex}
+\installfonts
+
+\setint{letterspacing}{25} % makes math less tight
+
+% Math fonts
+\installfamily{OT1}{zavm}{\skewchar\font=127} % the skewchar is set to dieresis
+\installfamily{OML}{zavm}{\skewchar\font=127} % the skewchar is set to tie
+\installfamily{OMS}{zavm}{}
+\installfamily{U}  {zavm}{} % for extra symbols and nonstandard alternates
+
+% We'll use MathDesign Bitstream Charter (mdbch) for math symbols.
+% Need to make sure the .pl files from the .tfm files are present in the working directory.
+
+% The Kerkis symbols ktsy.pfb are the next closest in weight, but doesn't have as many symbols (no AMS for instance).
+
+%txfonts 40, bold 70  pxfonts are the same
+%cmm bold 45
+%fourier 39 -- no bold
+%kerkis ktsy? 72:83 as kt:60 = 52
+%arev plus width 60
+%MnSymbol??
+
+% operators font
+\installfont{zavmr7t}
+  {favmr7tc,unsetot1symbols,fixot1accents,kernaccentsot1c,md-chb7t}
+  {ot1}
+  {OT1}{zavm}{m}{n}{}
+% operators font, bold
+\installfont{zavmb7t}
+  {favmb7tc,unsetot1symbols,fixot1accents,kernaccentsot1boldc,md-chb7t}
+  {ot1}
+  {OT1}{zavm}{b}{n}{}
+
+% letters font
+\installfont{zavmri7m}
+  {favmri7mc,fixweierstrass,kernaccentsomlc,resetdotlessi,md-chb7m}
+  {oml}
+  {OML}{zavm}{m}{it}{}
+% letters font, bold
+\installfont{zavmbi7m}
+  {favmbi7mc,fixweierstrass,kernaccentsomlboldc,resetdotlessi,md-chb7m}
+  {oml}
+  {OML}{zavm}{b}{it}{}
+
+% symbols font
+\installfont{zavmr7y}
+  {favmr7yc,unsetomssymbols,kernaccentsomlboldc,md-chb7y}
+  {oms}
+  {OMS}{zavm}{m}{n}{}
+
+% We'll use an unencoded font for extra symbols and alternate symbols.
+% These symbols need to be present in the glyphlist for the arevoml and arevoms encodings.
+% extra upright symbols
+\installfont{favmr7y}
+  {favmr7y}
+  {arevoms}
+  {U}{zavm}{m}{n}{}
+% extra italic symbols
+\installfont{favmri7m}
+  {favmri7m}
+  {arevoml}
+  {U}{zavm}{m}{it}{}
+
+\endinstallfonts
+\endrecordtransforms
+
+
+% Make map files
+\input finstmsc.sty
+\resetstr{PSfontsuffix}{.pfb} % otherwise uses .pfa
+
+\adddriver{dvips}{arev.map}
+\adddriver{pltotf}{maketfm}
+
+% make encoding files for dvips
+\etxtoenc{arevot1}{arevot1}
+\etxtoenc{arevoml}{arevoml}
+\etxtoenc{arevoms}{arevoms}
+
+\input mapfav.tex
+\input mapfavm.tex
+%\input mapzavm.tex % don't want to make dvips entries for mdbch, since they should already be installed
+\makemapentry{favmr7t}
+\makemapentry{favmb7t}
+\makemapentry{favmri7m}
+\makemapentry{favmbi7m}
+\makemapentry{favmr7y}
+
+\donedrivers
+
+\bye

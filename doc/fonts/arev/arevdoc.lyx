@@ -1,0 +1,4203 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass article
+\begin_preamble
+
+\usepackage{fullpage}
+\usepackage{bera}
+\usepackage{arevmath}
+
+\fboxsep=.25in
+
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdfauthor = {Stephen G. Hartke},
+  pdftitle = {Arev Sans for TeX and LaTeX},
+  pdfview = FitBH,
+  pdfstartview = FitBH,
+  colorlinks = false
+}
+
+\newcommand{\pic}[3][]
+    {\begin{center}\framebox{\scalebox{#2}{\includegraphics[#1]{#3.eps}}}\end{center}}
+\end_preamble
+\language english
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Title
+
+Arev Sans for TeX and LaTeX
+\layout Author
+
+Stephen G.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+ 
+\end_inset 
+
+Hartke
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+
+\emph on 
+email
+\emph default 
+: lastname at gmail dot com.
+\end_inset 
+
+
+\layout Date
+
+May 30, 2006
+\layout Section
+
+Introduction
+\layout Standard
+
+Bitstream Vera was designed by Jim Lyles of Bitstream, Inc., in cooperation
+ with the Gnome Foundation as a high quality scalable free font for use
+ with free open-source software 
+\begin_inset LatexCommand \cite{vera}
+
+\end_inset 
+
+.
+ The Bitstream Vera family includes serif, sans serif, and monospaced fonts,
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+The text of this document is set in Bera Serif and Mono\SpecialChar ~
+
+\begin_inset LatexCommand \cite{bera}
+
+\end_inset 
+
+, a repackaging of Bitstream Vera for TeX.
+\end_inset 
+
+ and all three fonts have normal, oblique, bold, and bold oblique faces.
+ Bitstream Vera is primarily intended as a screen font (though it also works
+ well as a print font) and has hinting for display on low-resolution devices
+ such as computer monitors and projectors.
+ All three fonts have large 
+\emph on 
+x
+\emph default 
+ height, wide letters and spacing, and 
+\begin_inset Quotes eld
+\end_inset 
+
+open
+\begin_inset Quotes erd
+\end_inset 
+
+ letters,
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+For instance, compare the lowercase 
+\begin_inset Quotes eld
+\end_inset 
+
+e
+\begin_inset Quotes erd
+\end_inset 
+
+ of Arev Sans with that of Helvetica.
+\end_inset 
+
+ resulting in fonts that are extremely easy to read at small sizes or on
+ projected displays.
+ 
+\layout Standard
+
+Tavmjong Bah created Arev Sans
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Per the license for Bitstream Vera, any derivative fonts must have a different
+ name.
+\end_inset 
+
+ by extending Bitstream Vera Sans to include Greek, Cyrillic, and many mathemati
+cal symbols 
+\begin_inset LatexCommand \cite{arev}
+
+\end_inset 
+
+.
+ The new glyphs added by Bah accurately capture the feel of the Latin letters
+ and so seamlessly integrate into the font.
+ Bah's intention was to add symbols that are useful for technical writing,
+ and hence the Greek letters are typical of those used in mathematics and
+ science and not of the letters used in writing the Greek language.
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Specifically, alpha is not the same as lowercase 
+\begin_inset Quotes eld
+\end_inset 
+
+a,
+\begin_inset Quotes erd
+\end_inset 
+
+ nu is not the same as lowercase 
+\begin_inset Quotes eld
+\end_inset 
+
+v,
+\begin_inset Quotes erd
+\end_inset 
+
+ and Upsilon is not the same as uppercase 
+\begin_inset Quotes eld
+\end_inset 
+
+Y.
+\begin_inset Quotes erd
+\end_inset 
+
+
+\end_inset 
+
+ At the author's request, Bah also added several alternate glyphs for some
+ of the Latin and Greek letters.
+ This was mainly done so that all of the letters can be clearly distinguished
+ when in mathematics and not surrounded by other letters or even aligned
+ with the baseline.
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+The lowercase 
+\begin_inset Quotes eld
+\end_inset 
+
+l
+\begin_inset Quotes erd
+\end_inset 
+
+ and the uppercase 
+\begin_inset Quotes eld
+\end_inset 
+
+I
+\begin_inset Quotes erd
+\end_inset 
+
+ in particular are almost identical in Bitstream Vera Sans.
+ The lowercase phi and original uppercase Phi in Arev Sans are also difficult
+ to distinguish without a baseline.
+\end_inset 
+
+ Additionally, several alternate glyphs were added that are 
+\begin_inset Quotes eld
+\end_inset 
+
+warmer
+\begin_inset Quotes erd
+\end_inset 
+
+ or more 
+\begin_inset Quotes eld
+\end_inset 
+
+humanist
+\begin_inset Quotes erd
+\end_inset 
+
+ than the strict 
+\begin_inset Quotes eld
+\end_inset 
+
+geometric
+\begin_inset Quotes erd
+\end_inset 
+
+ glyphs.
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+The extra glyphs include 
+\begin_inset Quotes eld
+\end_inset 
+
+a,
+\begin_inset Quotes erd
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+i,
+\begin_inset Quotes erd
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+l,
+\begin_inset Quotes erd
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+u,
+\begin_inset Quotes erd
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+v,
+\begin_inset Quotes erd
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+w,
+\begin_inset Quotes erd
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+x,
+\begin_inset Quotes erd
+\end_inset 
+
+ and uppercase Gamma, Pi, Xi, Sigma, and Phi.
+ The florin is used as an alternate 
+\begin_inset Quotes eld
+\end_inset 
+
+f.
+\begin_inset Quotes erd
+\end_inset 
+
+
+\end_inset 
+
+ These extra glyphs add a degree of warmth to mathematics written in Arev
+ Sans that is not achieved with other sans serif fonts.
+\layout Standard
+
+
+\begin_inset Float figure
+wide true
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+pic[viewport=96 0 527 198]{1}{fontsample}
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{cap:fontsample}
+
+\end_inset 
+
+Font sample of Arev Sans text and math.
+\end_inset 
+
+Figure\SpecialChar ~
+
+\begin_inset LatexCommand \ref{cap:fontsample}
+
+\end_inset 
+
+ shows a sample of Arev Sans being used for text and mathematics.
+ The primary use that the author sees for Arev Sans in LaTeX is for presentation
+s, and especially for those that are displayed with a computer projector.
+ The attributes of Bitstream Vera and Arev mentioned above make Arev particularl
+y suited for this purpose.
+ Besides Arev, there are only a few other options for sans serif fonts in
+ LaTeX, and none of them are entirely satisfactory.
+ Computer Modern sans serif and the SliTeX sans serif
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Arev Sans is actually very similar to SliTeX sans serif (
+\family typewriter 
+lcmss
+\family default 
+) in that both have large 
+\emph on 
+x
+\emph default 
+ height, have wide letters and spacing, and have 
+\begin_inset Quotes eld
+\end_inset 
+
+open
+\begin_inset Quotes erd
+\end_inset 
+
+ letters.
+ Arev Sans is heavier than SliTeX sans serif though, which makes it more
+ suitable for computer projectors.
+\end_inset 
+
+ fonts can be used for text, but Computer Modern roman is still used for
+ mathematics.
+ Walter Schmidt's Computer Modern Bright
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Harald Halders created Type 1 Postcript font versions of the 
+\family typewriter 
+cmbright
+\family default 
+ fonts called 
+\family typewriter 
+hfbright
+\family default 
+.
+ The fonts were created by tracing high resolution bitmaps, and so are not
+ perfect.
+ However, scalable Type 1 fonts greatly improve the quality of Postscript
+ and 
+\family typewriter 
+.pdf
+\family default 
+ files on computer screens and projectors.
+\end_inset 
+
+ (
+\family typewriter 
+cmbright
+\family default 
+
+\begin_inset LatexCommand \cite{cmbright}
+
+\end_inset 
+
+) is a sans serif family that includes both text and mathematics, but is
+ very thin and does not display well on a computer projector.
+ Kerkis Sans
+\begin_inset LatexCommand \cite{kerkis}
+
+\end_inset 
+
+ is based on Avant Garde and includes Greek sans serif glyphs, but is also
+ very thin.
+ Helvetica and other PostScript sans serif fonts can be used for text and
+ for Latin letters in mathematics, but they do not have matching Greek letters
+ or the proper weight for geometric mathematical symbols.
+\layout Standard
+
+The 
+\family typewriter 
+arev
+\family default 
+ package works well with the LaTeX package 
+\family typewriter 
+beamer
+\family default 
+ 
+\begin_inset LatexCommand \cite{beamer}
+
+\end_inset 
+
+ with the 
+\family typewriter 
+professionalfonts
+\family default 
+ option.
+ Figures\SpecialChar ~
+
+\begin_inset LatexCommand \ref{cap:ArevSans}
+
+\end_inset 
+
+-
+\begin_inset LatexCommand \ref{cap:Helvetica}
+
+\end_inset 
+
+ show examples of 
+\family typewriter 
+beamer
+\family default 
+ with the font options mentioned above where each slide is scaled to 90%
+ of its default size, and 
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Minipage
+position 1
+inner_position 0
+height "0pt"
+width "45col%"
+collapsed false
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.5}{prosper-arev}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -0.5em* \added_space_bottom bigskip* 
+
+\begin_inset LatexCommand \label{cap:Arev}
+
+\end_inset 
+
+Arev Sans
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Minipage
+position 1
+inner_position 0
+height "0pt"
+width "45col%"
+collapsed false
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.5}{prosper-helvetica}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -0.5em* \added_space_bottom bigskip* 
+Helvetica
+\end_inset 
+
+
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Minipage
+position 1
+inner_position 0
+height "0pt"
+width "45col%"
+collapsed false
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.5}{prosper-lcmss}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -0.5em* \added_space_bottom bigskip* 
+SliTeX font (
+\family typewriter 
+lcmss
+\family default 
+)
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Minipage
+position 1
+inner_position 0
+height "0pt"
+width "45col%"
+collapsed false
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.5}{prosper-kerkis}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -0.5em* \added_space_bottom bigskip* 
+Kerkis Sans
+\end_inset 
+
+
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Minipage
+position 1
+inner_position 0
+height "0pt"
+width "45col%"
+collapsed false
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.5}{prosper-cmss}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -0.5em* \added_space_bottom bigskip* 
+Computer Modern sans serif (
+\family typewriter 
+cmss
+\family default 
+)
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Minipage
+position 1
+inner_position 0
+height "0pt"
+width "45col%"
+collapsed false
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.5}{prosper-cmbright}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -0.5em* \added_space_bottom bigskip* 
+
+\begin_inset LatexCommand \label{cap:CM-Bright}
+
+\end_inset 
+
+CM Bright
+\end_inset 
+
+
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\end_inset 
+
+Figures\SpecialChar ~
+
+\begin_inset LatexCommand \ref{cap:Arev}
+
+\end_inset 
+
+-
+\begin_inset LatexCommand \ref{cap:CM-Bright}
+
+\end_inset 
+
+ show side-by-side examples scaled to 50%.
+ SliTeX sans serif is loaded into 
+\family typewriter 
+beamer
+\family default 
+ using TeXPower's 
+\family typewriter 
+tpslifonts.sty
+\family default 
+\SpecialChar ~
+
+\begin_inset LatexCommand \cite{texpower}
+
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.9}{prosper-arev}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -1.75em* 
+
+\begin_inset LatexCommand \label{cap:ArevSans}
+
+\end_inset 
+
+Arev Sans
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.9}{prosper-lcmss}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -1.75em* 
+SliTeX font (
+\family typewriter 
+lcmss
+\family default 
+)
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.9}{prosper-cmss}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -1.75em* 
+Computer Modern sans serif (
+\family typewriter 
+cmss
+\family default 
+)
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.9}{prosper-cmbright}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -1.75em* 
+CM Bright
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.9}{prosper-kerkis}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -1.75em* 
+Kerkis Sans
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+pic{.9}{prosper-helvetica}
+\end_inset 
+
+
+\layout Caption
+\added_space_top -1.75em* 
+
+\begin_inset LatexCommand \label{cap:Helvetica}
+
+\end_inset 
+
+Helvetica
+\end_inset 
+
+
+\layout Section
+
+Implementation
+\layout Standard
+
+With internationalization of computer software and the growing use of Unicode,
+ many free scalable fonts are available that include both Latin and Greek
+ letters.
+ However, making use of these fonts for mathematics in LaTeX is a nontrivial
+ task: not only are there many subtleties to using fonts in LaTeX, but the
+ documentation is scattered among many sources and there are few examples
+ to consult.
+ The author hopes that the 
+\family typewriter 
+arev
+\family default 
+ package can serve as a template for others who wish to create new math
+ font packages for LaTeX.
+\layout Standard
+
+The excellent GPLed font editor FontForge\SpecialChar ~
+
+\begin_inset LatexCommand \cite{fontforge}
+
+\end_inset 
+
+ was used by Bah to create Arev Sans and was used by the author for creating
+ PostScript 
+\family typewriter 
+pfb
+\family default 
+, 
+\family typewriter 
+afm
+\family default 
+ , and TeX 
+\family typewriter 
+tfm
+\family default 
+ files.
+ Version 0.21a of Arev Sans contains a considerable number of glyphs; 
+\family typewriter 
+fontinst
+\family default 
+ exhausted TeX's memory trying to process the 
+\family typewriter 
+afm
+\family default 
+ files.
+ Thus, when creating the Type\SpecialChar ~
+1 versions of Arev Sans, most of the glyphs
+ unused by TeX were removed.
+ The Bash shell script 
+\family typewriter 
+afmtoglyphlist
+\family default 
+ was used to extract the glyph names from the 
+\family typewriter 
+afm
+\family default 
+ file into a list that a 
+\family typewriter 
+fontinst
+\family default 
+ script used for renaming glyphs.
+ The magic of 
+\family typewriter 
+fontinst
+\family default 
+ was used to create virtual fonts and font metrics, LaTeX font definition
+ files, and the 
+\family typewriter 
+dvips
+\family default 
+ map file.
+\layout Standard
+
+The vertical placement of math accents requires the accents to be appropriately
+ placed for characters 1 ex high.
+ The accents also need to have a zero depth, which is set by the file 
+\family typewriter 
+fixot1accents.mtx
+\family default 
+ (based on their bounding boxes, the accents naturally have negative depths).
+ Horizontal placement of math accents is done by centering the accent over
+ the character, and then adjusting the position by the kern between the
+ character on the left and a special character called the 
+\emph on 
+skewchar
+\emph default 
+.
+ Bah has accent placement information in his FontForge sfd files, so the
+ scripts 
+\family typewriter 
+createkerndata
+\family default 
+, 
+\family typewriter 
+fonttokernsfd.ff
+\family default 
+, and 
+\family typewriter 
+sfdtokernaccent
+\family default 
+ extract this kern information from the 
+\family typewriter 
+sfd
+\family default 
+ file and create 
+\family typewriter 
+mtx
+\family default 
+ files that calculate the appropriate kern.
+ The one difficulty in implementing this in 
+\family typewriter 
+fontinst
+\family default 
+ is that the kerning data must be reglyphed before being applied to the
+ font metrics.
+\layout Standard
+
+In mathematics, Arev Sans is used for all letter-like symbols, including
+ Latin and Greek letters.
+ Arev Sans includes many mathematical symbols, but not the full range of
+ symbols included in Computer Modern or the AMS symbol fonts.
+ The Math Design Bitstream Charter\SpecialChar ~
+
+\begin_inset LatexCommand \cite{mdch}
+
+\end_inset 
+
+ bold math font comes very close to the weight of Arev Sans, and so is used
+ for the majority of geometric symbols
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+The Math Design Bitstream Charter math fonts have a few minor flaws: for
+ instance, in the formation of square root symbols and overbraces.
+ However, most of the symbols are of fine quality, and the range of symbols
+ is impressive.
+\end_inset 
+
+.
+ Computer Modern is used for the default calligraphic font, Fourier-GUTenberg\SpecialChar ~
+
+\begin_inset LatexCommand \cite{fourier}
+
+\end_inset 
+
+ for blackboard bold (since the letters are sans serif), Ralph Smith Formal
+ Script for script, and the AMS font for fraktur.
+ One disadvantage of using so many different fonts for mathematics is that
+ TeX can only have sixteen simultaneously loaded fonts, and the Arev package
+ comes very close to this limit.
+\layout Standard
+
+The file 
+\family typewriter 
+mathtesty.tex
+\family default 
+ is a combination of the file 
+\family typewriter 
+mathtestx.tex
+\family default 
+ from the 
+\family typewriter 
+mathptmx
+\family default 
+ package\SpecialChar ~
+
+\begin_inset LatexCommand \cite{mathptmx}
+
+\end_inset 
+
+ and the 
+\family typewriter 
+symbols.tex
+\family default 
+ file of David Carlisle.
+ It is very useful for testing all of the math styles and symbols for a
+ given font setup.
+\layout Standard
+
+There are three LaTeX packages for use with Arev Sans: 
+\family typewriter 
+arev
+\family default 
+, 
+\family typewriter 
+arevtext
+\family default 
+, and 
+\family typewriter 
+arevmath
+\family default 
+.
+ The 
+\family typewriter 
+arev
+\family default 
+ package simply loads both 
+\family typewriter 
+arevtext
+\family default 
+ and 
+\family typewriter 
+arevmath
+\family default 
+.
+ 
+\family typewriter 
+arevtext
+\family default 
+ changes the default text font (both roman and sans serif) to Arev Sans.
+ 
+\family typewriter 
+arevtext
+\family default 
+ also changes the default typewriter font to Bera Mono, a repackaging of
+ Bitstream Vera Sans Mono for TeX.
+ Since Bera Mono is a sans serif font and very close in appearance to Arev,
+ Luxi Mono\SpecialChar ~
+
+\begin_inset LatexCommand \cite{luximono}
+
+\end_inset 
+
+ might be a better choice for the typewriter font.
+ 
+\family typewriter 
+arevmath
+\family default 
+ sets the math fonts as described above.
+ In addition to the normal styles, the 
+\family typewriter 
+
+\backslash 
+mathbm
+\family default 
+ command changes the math font to bold italic.
+\layout Standard
+
+Variant letters defined by 
+\family typewriter 
+arevmath
+\family default 
+:
+\layout Standard
+\align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="9" columns="11">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="block" valignment="top" width="0.5in">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origa$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origa
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\vara$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+vara
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origI$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origI
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varI$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varI
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origi$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origi
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\vari$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+vari
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origIota$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origIota
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varIota$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varIota
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origimath$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origimath
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varimath$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varimath
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origGamma$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origGamma
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varGamma$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varGamma
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origf$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origf
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varf$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varf
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origXi$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origXi
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varXi$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varXi
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origl$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origl
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varl$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varl
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origPi$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origPi
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varPi$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varPi
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origu$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origu
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varu$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varu
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origSigma$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origSigma
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varSigma$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varSigma
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origv$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origv
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varv$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varv
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origPhi$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origPhi
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varPhi$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varPhi
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origw$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origw
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varw$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varw
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\origx$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+origx
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varx$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varx
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Standard
+
+All of the variant letters are selected by default.
+ The user can choose which variants to use by selecting the package option
+ 
+\family typewriter 
+origletters
+\family default 
+, and then choosing the variants from the options 
+\family typewriter 
+vara
+\family default 
+, 
+\family typewriter 
+vari
+\family default 
+, 
+\family typewriter 
+varf
+\family default 
+, 
+\family typewriter 
+varl
+\family default 
+, 
+\family typewriter 
+varu
+\family default 
+, 
+\family typewriter 
+varv
+\family default 
+, 
+\family typewriter 
+varw
+\family default 
+, 
+\family typewriter 
+varx
+\family default 
+, 
+\family typewriter 
+varI
+\family default 
+, 
+\family typewriter 
+varGamma
+\family default 
+, 
+\family typewriter 
+varXi
+\family default 
+,
+\family typewriter 
+ varPi
+\family default 
+,
+\family typewriter 
+ varSigma
+\family default 
+, and 
+\family typewriter 
+varPhi
+\family default 
+.
+ Note that there is no 
+\family typewriter 
+varimath
+\family default 
+ option, which follows the 
+\family typewriter 
+vari
+\family default 
+ selection, or 
+\family typewriter 
+varIota
+\family default 
+ option, since Iota is treated the same as 
+\begin_inset Quotes eld
+\end_inset 
+
+I.
+\begin_inset Quotes erd
+\end_inset 
+
+ For example, if a user selected
+\layout Quote
+
+
+\family typewriter 
+
+\backslash 
+usepackage[origletters,vara,varf,varGamma,varPi]{arevmath}
+\layout Standard
+
+the following letters would be used:
+\layout Standard
+\align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="1" columns="3">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $a\origi\origimath\varf\origl\origu\origv\origw\origx\origI\Gamma\origXi\Pi\Sigma\origPhi$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+$ai
+\backslash 
+imath fluvwxI
+\backslash 
+Gamma
+\backslash 
+Xi
+\backslash 
+Pi
+\backslash 
+Sigma
+\backslash 
+Phi$
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Standard
+
+Extra symbols defined by 
+\family typewriter 
+arevmath
+\family default 
+:
+\layout Standard
+\align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="11" columns="8">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0.5in">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="block" valignment="top" width="0.5in">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varspade$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varspade
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\quarternote$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+quarternote
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\yinyang$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+yinyang
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varheart$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varheart
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\eighthnote$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+eighthnote
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\smileface$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+smileface
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\vardiamond$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+vardiamond
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\sixteenthnote$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+sixteenthnote
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\invsmileface$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+invsmileface
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varclub$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varclub
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\steaming$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+steaming
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\sadface$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+sadface
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\hbar$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+hbar
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\westcross$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+westcross
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\eth$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+eth
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\hslash$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+hslash
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\eastcross$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+eastcross
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\mho$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+mho
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\skull$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+skull
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\anchor$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+anchor
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\pointright$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+pointright
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\radiation$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+radiation
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\recycle$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+recycle
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\pencil$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+pencil
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\biohazard$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+biohazard
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\heavyqtleft$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+heavyqtleft
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\arrowbullet$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+arrowbullet
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\swords$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+swords
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\heavyqtright$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+heavyqtright
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\ballotcheck$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+ballotcheck
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\warning$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+warning
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\ballotx$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+ballotx
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Standard
+
+
+\family typewriter 
+arevmath
+\family default 
+ also has support for several variant and ancient Greek characters.
+ All characters necessary for writing ordinal numbers as 
+\begin_inset Quotes eld
+\end_inset 
+
+alphabetic
+\begin_inset Quotes erd
+\end_inset 
+
+ Greek numerals (which is similar in usage to Roman numerals---see\SpecialChar ~
+
+\begin_inset LatexCommand \cite{GreekNumerals}
+
+\end_inset 
+
+) are available.
+ 
+\layout Standard
+\align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="4" columns="8">
+<features>
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="block" valignment="top" width="0.5in">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0.5in">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varbeta$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varbeta
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\Qoppa$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+Qoppa
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\Sampi$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+Sampi
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\varkappa$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+varkappa
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\qoppa$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+qoppa
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\sampi$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+sampi
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\digamma$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+digamma
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\Koppa$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+Koppa
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\Stigma$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+Stigma
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\koppa$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+koppa
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\stigma$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\family typewriter 
+
+\backslash 
+stigma
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Standard
+
+A possible future capability of the 
+\family typewriter 
+arevmath
+\family default 
+ package is the ability to choose either italic or upright Greek letters.
+ This would require modification of the variant letters code as well.
+\layout Section
+
+Installation
+\layout Standard
+
+These directions assume that your TeX installation is TDS-compliant.
+ I've tested these directions on teTeX 3.0, but other distributions should
+ be similar.
+\layout Paragraph
+
+teTeX:
+\layout Enumerate
+
+Copy 
+\family typewriter 
+doc
+\family default 
+, 
+\family typewriter 
+fonts
+\family default 
+, 
+\family typewriter 
+source
+\family default 
+, and 
+\family typewriter 
+tex
+\family default 
+ directories to your 
+\family typewriter 
+texmf
+\family default 
+ directory (either your local or global 
+\family typewriter 
+texmf
+\family default 
+ directory).
+\layout Enumerate
+
+Run 
+\begin_inset Quotes eld
+\end_inset 
+
+
+\family typewriter 
+mktexlsr
+\family default 
+
+\begin_inset Quotes erd
+\end_inset 
+
+ to refresh the filename database and make TeX aware of the new files.
+\layout Enumerate
+
+Run 
+\begin_inset Quotes eld
+\end_inset 
+
+
+\family typewriter 
+updmap --enable Map arev.map
+\family default 
+
+\begin_inset Quotes erd
+\end_inset 
+
+ to make 
+\family typewriter 
+dvips
+\family default 
+, 
+\family typewriter 
+xdvi
+\family default 
+, 
+\family typewriter 
+dvipdfm
+\family default 
+, and 
+\family typewriter 
+pdflatex
+\family default 
+ aware of the fonts.
+\layout Paragraph
+
+MikTeX:
+\layout Enumerate
+
+Copy 
+\family typewriter 
+doc
+\family default 
+, 
+\family typewriter 
+fonts
+\family default 
+, 
+\family typewriter 
+source
+\family default 
+, and 
+\family typewriter 
+tex
+\family default 
+ directories to your local 
+\family typewriter 
+texmf
+\family default 
+ directory (most likely 
+\family typewriter 
+C:
+\backslash 
+localtexmf
+\family default 
+).
+\layout Enumerate
+
+Add the line 
+\begin_inset Quotes eld
+\end_inset 
+
+
+\family typewriter 
+Map arev.map
+\family default 
+
+\begin_inset Quotes erd
+\end_inset 
+
+ to the file 
+\family typewriter 
+updmap.cfg
+\family default 
+ in your local 
+\family typewriter 
+texmf/config
+\family default 
+ directory (most likely 
+\family typewriter 
+C:
+\backslash 
+localtexmf
+\backslash 
+miktex
+\backslash 
+config
+\backslash 
+updmap.cfg
+\family default 
+).
+ If the file does not exist, then create it with just the line above.
+\layout Enumerate
+
+Refresh the filename database either through the graphical interface or
+ by running 
+\begin_inset Quotes eld
+\end_inset 
+
+
+\family typewriter 
+initexmf -u
+\family default 
+
+\begin_inset Quotes erd
+\end_inset 
+
+.
+\layout Enumerate
+
+Run 
+\begin_inset Quotes eld
+\end_inset 
+
+
+\family typewriter 
+initexmf --mkmaps
+\family default 
+
+\begin_inset Quotes erd
+\end_inset 
+
+ to make 
+\family typewriter 
+dvips
+\family default 
+, 
+\family typewriter 
+yap
+\family default 
+, 
+\family typewriter 
+dvipdfm(x)
+\family default 
+, and 
+\family typewriter 
+pdflatex
+\family default 
+ aware of the fonts.
+\layout Standard
+
+The 
+\family typewriter 
+arev
+\family default 
+ package relies on the following font packages: Math Design (geometric symbols),
+ Fourier (blackboard bold), Ralph Smith Formal Script (script), and Bera
+ (typewriter text).
+\layout Section
+
+Licenses
+\layout Standard
+
+Bitstream Vera is released under a special license that allows free distribution.
+ The fonts may also be modified and extended, as long as the resulting fonts
+ are released under a different name.
+ Arev Sans is released under the same license as Bitstream Vera.
+ However, Arev's creator Tavmjong Bah requests that TrueType versions of
+ Arev be obtained from his website at 
+\begin_inset LatexCommand \cite{arev}
+
+\end_inset 
+
+ instead of being converted from the Postscript fonts included with the
+ LaTeX package.
+ The TrueType versions are also complete, while the Type\SpecialChar ~
+1 Postscript versions
+ have a reduced gylph set.
+ FontForge source files may also be obtained at Bah's website.
+\layout Standard
+
+The virtual fonts, font definitions, LaTeX packages and other supporting
+ files of the 
+\family typewriter 
+arev
+\family default 
+ package are released under the LaTeX Project Public License (LPPL), version\SpecialChar ~
+1.2.
+ The one exception is the file 
+\family typewriter 
+ams-mdbch.sty
+\family default 
+, which was taken from the Math Design Bitstream Charter package.
+ This file is released under the GNU General Public License (GPL), version\SpecialChar ~
+2.
+\layout Section
+
+Acknowledgments
+\layout Standard
+
+The author would like to thank Tavmjong Bah for his willingness to add character
+s to Arev Sans; George Williams for a prompt response and patch on the FontForge
+ mailing list; and Lars Hellstr
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+"o
+\end_inset 
+
+m for help with math accents and 
+\family typewriter 
+fontinst
+\family default 
+ on the 
+\family typewriter 
+tex-fonts
+\family default 
+ and 
+\family typewriter 
+fontinst
+\family default 
+ mailing lists.
+ Thanks also to L.\SpecialChar ~
+Dwynn Lafleur for requesting 
+\begin_inset Formula $\hbar$
+\end_inset 
+
+ and 
+\begin_inset Formula $\hslash$
+\end_inset 
+
+ and discussions about their use; and to Rafael Villaroel for pointing out
+ an error in 
+\family typewriter 
+arev.map
+\family default 
+ in versions up through 2005 Aug 8.
+ Thanks to Krzysztof C.
+ Kiwiel for testing the installation of the 
+\family typewriter 
+arev
+\family default 
+ package under MikTeX and providing suggestions for the instructions.
+\layout Bibliography
+\bibitem {arev}
+
+Arev Sans by Tavmjong Bah, 
+\family typewriter 
+http://tavmjong.free.fr/FONTS
+\family default 
+.
+\layout Bibliography
+\bibitem {beamer}
+
+LaTeX class 
+\family typewriter 
+beamer
+\family default 
+ by Till Tantau, 
+\family typewriter 
+http://latex-beamer.sourceforge.net
+\family default 
+.
+\layout Bibliography
+\bibitem {bera}
+
+Bera Postscript Type 1 fonts by Malte Rosenau (converted from Bitstream
+ Vera fonts, which necessitated the name change) and LaTeX support files
+ by Walter Schmidt, CTAN:
+\family typewriter 
+/fonts/bera
+\family default 
+.
+\layout Bibliography
+\bibitem {vera}
+
+Bitstream Vera by Jim Lyles of Bitstream, Inc., released in cooperation with
+ the Gnome Foundation, 
+\family typewriter 
+http://www.gnome.org/fonts
+\family default 
+.
+\layout Bibliography
+\bibitem {cmbright}
+
+Computer Modern Bright fonts and 
+\family typewriter 
+cmbright
+\family default 
+ LaTeX package by Walter Schmidt, CTAN:
+\family typewriter 
+/fonts/cmbright
+\family default 
+.
+\layout Bibliography
+\bibitem {fontforge}
+
+FontForge font editor by George Williams, 
+\family typewriter 
+http://fontforge.sourceforge.net
+\family default 
+.
+\layout Bibliography
+\bibitem {fontinst}
+
+
+\family typewriter 
+fontinst
+\family default 
+ TeX font installation utility by Alan Jeffrey, Sebastian Rahtz, Ulrik Vieth,
+ Lars Hellstr
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+"o
+\end_inset 
+
+m, and Rowland McDonnell, CTAN:
+\family typewriter 
+/fonts/utilities/fontinst
+\family default 
+.
+\layout Bibliography
+\bibitem {fourier}
+
+Fourier-GUTenberg fonts and LaTeX package by Michel Bovani, CTAN:
+\family typewriter 
+/fonts/fourier-GUT
+\family default 
+.
+\layout Bibliography
+\bibitem {kerkis}
+
+Kerkis font by Antonis Tsolomitis, CTAN:
+\family typewriter 
+/fonts/greek/kerkis
+\family default 
+.
+\layout Bibliography
+\bibitem {luximono}
+
+Luxi Mono by Bigelow and Holmes, CTAN:
+\family typewriter 
+/fonts/greek/kerkis
+\family default 
+.
+\layout Bibliography
+\bibitem {mdch}
+
+Math Design fonts for Bitstream Charter by Paul Pichaureau, CTAN:
+\family typewriter 
+/fonts/mathdesign
+\family default 
+.
+\layout Bibliography
+\bibitem {mathptmx}
+
+
+\family typewriter 
+mathptmx
+\family default 
+ by Walter Schmidt, part of the 
+\family typewriter 
+psnfss
+\family default 
+ package, CTAN:
+\family typewriter 
+/fonts/psfonts/psnfss-source
+\family default 
+.
+\layout Bibliography
+\bibitem {rsfs}
+
+Ralph Smith Formal Script (
+\family typewriter 
+rsfs
+\family default 
+) font by Ralph Smith, Postscript Type 1 version by Taco Hoekwater, CTAN:
+\family typewriter 
+/fonts/rsfs
+\family default 
+.
+\layout Bibliography
+\bibitem {texpower}
+
+TeXPower LaTeX style files by Stephan Lehmke, 
+\family typewriter 
+http://texpower.sourceforge.net
+\family default 
+.
+\layout Bibliography
+\bibitem {GreekNumerals}
+
+Wikipedia artical on Greek numerals, 
+\family typewriter 
+http://en.wikipedia.org/wiki/Greek_numerals
+\family default 
+.
+\the_end

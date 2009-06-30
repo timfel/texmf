@@ -1,0 +1,681 @@
+%% LyX 1.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{array}
+\usepackage{amssymb}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Bold symbol macro for standard LaTeX users
+\newcommand{\boldsymbol}[1]{\mbox{\boldmath $#1$}}
+
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+\usepackage{fullpage}
+\usepackage{bera}
+\usepackage{arevmath}
+
+\fboxsep=.25in
+
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdfauthor = {Stephen G. Hartke},
+  pdftitle = {Arev Sans for TeX and LaTeX},
+  pdfview = FitBH,
+  pdfstartview = FitBH,
+  colorlinks = false
+}
+
+\newcommand{\pic}[3][]
+    {\begin{center}\framebox{\scalebox{#2}{\includegraphics[#1]{#3.eps}}}\end{center}}
+
+\usepackage{babel}
+\makeatother
+\begin{document}
+
+\title{Arev Sans for \TeX{} and \LaTeX{}}
+
+
+\author{Stephen G.\ Hartke%
+\footnote{\emph{email}: lastname at gmail dot com.%
+}}
+
+
+\date{May 30, 2006}
+
+\maketitle
+
+\section{Introduction}
+
+Bitstream Vera was designed by Jim Lyles of Bitstream, Inc., in cooperation
+with the Gnome Foundation as a high quality scalable free font for
+use with free open-source software \cite{vera}. The Bitstream Vera
+family includes serif, sans serif, and monospaced fonts,%
+\footnote{The text of this document is set in Bera Serif and Mono~\cite{bera},
+a repackaging of Bitstream Vera for \TeX{}.%
+} and all three fonts have normal, oblique, bold, and bold oblique
+faces. Bitstream Vera is primarily intended as a screen font (though
+it also works well as a print font) and has hinting for display on
+low-resolution devices such as computer monitors and projectors. All
+three fonts have large \emph{x} height, wide letters and spacing,
+and {}``open'' letters,%
+\footnote{For instance, compare the lowercase {}``e'' of Arev Sans with that
+of Helvetica.%
+} resulting in fonts that are extremely easy to read at small sizes
+or on projected displays. 
+
+Tavmjong Bah created Arev Sans%
+\footnote{Per the license for Bitstream Vera, any derivative fonts must have
+a different name.%
+} by extending Bitstream Vera Sans to include Greek, Cyrillic, and
+many mathematical symbols \cite{arev}. The new glyphs added by Bah
+accurately capture the feel of the Latin letters and so seamlessly
+integrate into the font. Bah's intention was to add symbols that are
+useful for technical writing, and hence the Greek letters are typical
+of those used in mathematics and science and not of the letters used
+in writing the Greek language.%
+\footnote{Specifically, alpha is not the same as lowercase {}``a,'' nu is
+not the same as lowercase {}``v,'' and Upsilon is not the same as
+uppercase {}``Y.''%
+} At the author's request, Bah also added several alternate glyphs
+for some of the Latin and Greek letters. This was mainly done so that
+all of the letters can be clearly distinguished when in mathematics
+and not surrounded by other letters or even aligned with the baseline.%
+\footnote{The lowercase {}``l'' and the uppercase {}``I'' in particular
+are almost identical in Bitstream Vera Sans. The lowercase phi and
+original uppercase Phi in Arev Sans are also difficult to distinguish
+without a baseline.%
+} Additionally, several alternate glyphs were added that are {}``warmer''
+or more {}``humanist'' than the strict {}``geometric'' glyphs.%
+\footnote{The extra glyphs include {}``a,'' {}``i,'' {}``l,'' {}``u,''
+{}``v,'' {}``w,'' {}``x,'' and uppercase Gamma, Pi, Xi, Sigma,
+and Phi. The florin is used as an alternate {}``f.''%
+} These extra glyphs add a degree of warmth to mathematics written
+in Arev Sans that is not achieved with other sans serif fonts.
+
+%
+\begin{figure*}
+\begin{center}\pic[viewport=96 0 527 198]{1}{fontsample}\end{center}
+
+
+\caption{\label{cap:fontsample}Font sample of Arev Sans text and math.}
+\end{figure*}
+Figure~\ref{cap:fontsample} shows a sample of Arev Sans being used
+for text and mathematics. The primary use that the author sees for
+Arev Sans in \LaTeX{} is for presentations, and especially for those
+that are displayed with a computer projector. The attributes of Bitstream
+Vera and Arev mentioned above make Arev particularly suited for this
+purpose. Besides Arev, there are only a few other options for sans
+serif fonts in \LaTeX{}, and none of them are entirely satisfactory.
+Computer Modern sans serif and the Sli\TeX{} sans serif%
+\footnote{Arev Sans is actually very similar to Sli\TeX{} sans serif (\texttt{lcmss})
+in that both have large \emph{x} height, have wide letters and spacing,
+and have {}``open'' letters. Arev Sans is heavier than Sli\TeX{}
+sans serif though, which makes it more suitable for computer projectors.%
+} fonts can be used for text, but Computer Modern roman is still used
+for mathematics. Walter Schmidt's Computer Modern Bright%
+\footnote{Harald Halders created Type 1 Postcript font versions of the \texttt{cmbright}
+fonts called \texttt{hfbright}. The fonts were created by tracing
+high resolution bitmaps, and so are not perfect. However, scalable
+Type 1 fonts greatly improve the quality of Postscript and \texttt{.pdf}
+files on computer screens and projectors.%
+} (\texttt{cmbright}\cite{cmbright}) is a sans serif family that includes
+both text and mathematics, but is very thin and does not display well
+on a computer projector. Kerkis Sans\cite{kerkis} is based on Avant
+Garde and includes Greek sans serif glyphs, but is also very thin.
+Helvetica and other PostScript sans serif fonts can be used for text
+and for Latin letters in mathematics, but they do not have matching
+Greek letters or the proper weight for geometric mathematical symbols.
+
+The \texttt{arev} package works well with the \LaTeX{} package \texttt{beamer}
+\cite{beamer} with the \texttt{professionalfonts} option. Figures~\ref{cap:ArevSans}-\ref{cap:Helvetica}
+show examples of \texttt{beamer} with the font options mentioned above
+where each slide is scaled to 90\% of its default size, and %
+\begin{figure}
+\begin{center}\begin{tabular}{cc}
+\begin{minipage}[c]{0.45\columnwidth}%
+\pic{.5}{prosper-arev}
+
+
+\vspace*{-0.5em}
+\caption{\label{cap:Arev}Arev Sans}\vspace*{\bigskipamount}
+\end{minipage}%
+&
+\begin{minipage}[c]{0.45\columnwidth}%
+\pic{.5}{prosper-helvetica}
+
+
+\vspace*{-0.5em}
+\caption{Helvetica}\vspace*{\bigskipamount}
+\end{minipage}%
+\tabularnewline
+\begin{minipage}[c]{0.45\columnwidth}%
+\pic{.5}{prosper-lcmss}
+
+
+\vspace*{-0.5em}
+\caption{Sli\TeX{} font (\texttt{lcmss})}\vspace*{\bigskipamount}
+\end{minipage}%
+&
+\begin{minipage}[c]{0.45\columnwidth}%
+\pic{.5}{prosper-kerkis}
+
+
+\vspace*{-0.5em}
+\caption{Kerkis Sans}\vspace*{\bigskipamount}
+\end{minipage}%
+\tabularnewline
+\begin{minipage}[c]{0.45\columnwidth}%
+\pic{.5}{prosper-cmss}
+
+
+\vspace*{-0.5em}
+\caption{Computer Modern sans serif (\texttt{cmss})}\vspace*{\bigskipamount}
+\end{minipage}%
+&
+\begin{minipage}[c]{0.45\columnwidth}%
+\pic{.5}{prosper-cmbright}
+
+
+\vspace*{-0.5em}
+\caption{\label{cap:CM-Bright}CM Bright}\vspace*{\bigskipamount}
+\end{minipage}%
+\tabularnewline
+\end{tabular}\end{center}
+\end{figure}
+Figures~\ref{cap:Arev}-\ref{cap:CM-Bright} show side-by-side examples
+scaled to 50\%. Sli\TeX{} sans serif is loaded into \texttt{beamer}
+using \TeX{}Power's \texttt{tpslifonts.sty}~\cite{texpower}.%
+\begin{figure}
+\begin{center}\pic{.9}{prosper-arev}\end{center}
+
+
+\vspace*{-1.75em}
+\caption{\label{cap:ArevSans}Arev Sans}
+\end{figure}
+%
+\begin{figure}
+\begin{center}\pic{.9}{prosper-lcmss}\end{center}
+
+
+\vspace*{-1.75em}
+\caption{Sli\TeX{} font (\texttt{lcmss})}
+\end{figure}
+%
+\begin{figure}
+\begin{center}\pic{.9}{prosper-cmss}\end{center}
+
+
+\vspace*{-1.75em}
+\caption{Computer Modern sans serif (\texttt{cmss})}
+\end{figure}
+%
+\begin{figure}
+\begin{center}\pic{.9}{prosper-cmbright}\end{center}
+
+
+\vspace*{-1.75em}
+\caption{CM Bright}
+\end{figure}
+%
+\begin{figure}
+\begin{center}\pic{.9}{prosper-kerkis}\end{center}
+
+
+\vspace*{-1.75em}
+\caption{Kerkis Sans}
+\end{figure}
+%
+\begin{figure}
+\begin{center}\pic{.9}{prosper-helvetica}\end{center}
+
+
+\vspace*{-1.75em}
+\caption{\label{cap:Helvetica}Helvetica}
+\end{figure}
+
+
+
+\section{Implementation}
+
+With internationalization of computer software and the growing use
+of Unicode, many free scalable fonts are available that include both
+Latin and Greek letters. However, making use of these fonts for mathematics
+in \LaTeX{} is a nontrivial task: not only are there many subtleties
+to using fonts in \LaTeX{}, but the documentation is scattered among
+many sources and there are few examples to consult. The author hopes
+that the \texttt{arev} package can serve as a template for others
+who wish to create new math font packages for \LaTeX{}.
+
+The excellent GPLed font editor FontForge~\cite{fontforge} was used
+by Bah to create Arev Sans and was used by the author for creating
+PostScript \texttt{pfb}, \texttt{afm} , and \TeX{} \texttt{tfm} files.
+Version 0.21a of Arev Sans contains a considerable number of glyphs;
+\texttt{fontinst} exhausted \TeX{}'s memory trying to process the
+\texttt{afm} files. Thus, when creating the Type~1 versions of Arev
+Sans, most of the glyphs unused by \TeX{} were removed. The Bash shell
+script \texttt{afmtoglyphlist} was used to extract the glyph names
+from the \texttt{afm} file into a list that a \texttt{fontinst} script
+used for renaming glyphs. The magic of \texttt{fontinst} was used
+to create virtual fonts and font metrics, \LaTeX{} font definition
+files, and the \texttt{dvips} map file.
+
+The vertical placement of math accents requires the accents to be
+appropriately placed for characters 1 ex high. The accents also need
+to have a zero depth, which is set by the file \texttt{fixot1accents.mtx}
+(based on their bounding boxes, the accents naturally have negative
+depths). Horizontal placement of math accents is done by centering
+the accent over the character, and then adjusting the position by
+the kern between the character on the left and a special character
+called the \emph{skewchar}. Bah has accent placement information in
+his FontForge sfd files, so the scripts \texttt{createkerndata}, \texttt{fonttokernsfd.ff},
+and \texttt{sfdtokernaccent} extract this kern information from the
+\texttt{sfd} file and create \texttt{mtx} files that calculate the
+appropriate kern. The one difficulty in implementing this in \texttt{fontinst}
+is that the kerning data must be reglyphed before being applied to
+the font metrics.
+
+In mathematics, Arev Sans is used for all letter-like symbols, including
+Latin and Greek letters. Arev Sans includes many mathematical symbols,
+but not the full range of symbols included in Computer Modern or the
+AMS symbol fonts. The Math Design Bitstream Charter~\cite{mdch}
+bold math font comes very close to the weight of Arev Sans, and so
+is used for the majority of geometric symbols%
+\footnote{The Math Design Bitstream Charter math fonts have a few minor flaws:
+for instance, in the formation of square root symbols and overbraces.
+However, most of the symbols are of fine quality, and the range of
+symbols is impressive.%
+}. Computer Modern is used for the default calligraphic font, Fourier-GUTenberg~\cite{fourier}
+for blackboard bold (since the letters are sans serif), Ralph Smith
+Formal Script for script, and the AMS font for fraktur. One disadvantage
+of using so many different fonts for mathematics is that \TeX{} can
+only have sixteen simultaneously loaded fonts, and the Arev package
+comes very close to this limit.
+
+The file \texttt{mathtesty.tex} is a combination of the file \texttt{mathtestx.tex}
+from the \texttt{mathptmx} package~\cite{mathptmx} and the \texttt{symbols.tex}
+file of David Carlisle. It is very useful for testing all of the math
+styles and symbols for a given font setup.
+
+There are three \LaTeX{} packages for use with Arev Sans: \texttt{arev},
+\texttt{arevtext}, and \texttt{arevmath}. The \texttt{arev} package
+simply loads both \texttt{arevtext} and \texttt{arevmath}. \texttt{arevtext}
+changes the default text font (both roman and sans serif) to Arev
+Sans. \texttt{arevtext} also changes the default typewriter font to
+Bera Mono, a repackaging of Bitstream Vera Sans Mono for \TeX{}. Since
+Bera Mono is a sans serif font and very close in appearance to Arev,
+Luxi Mono~\cite{luximono} might be a better choice for the typewriter
+font. \texttt{arevmath} sets the math fonts as described above. In
+addition to the normal styles, the \texttt{\textbackslash{}mathbm}
+command changes the math font to bold italic.
+
+Variant letters defined by \texttt{arevmath}:
+
+\begin{center}\begin{tabular}{lllllp{0.5in}lllll}
+$\origa$&
+\texttt{\textbackslash{}origa}&
+&
+$\vara$&
+\texttt{\textbackslash{}vara}&
+&
+$\origI$&
+\texttt{\textbackslash{}origI}&
+&
+$\varI$&
+\texttt{\textbackslash{}varI}\tabularnewline
+$\origi$&
+\texttt{\textbackslash{}origi}&
+&
+$\vari$&
+\texttt{\textbackslash{}vari}&
+&
+$\origIota$&
+\texttt{\textbackslash{}origIota}&
+&
+$\varIota$&
+\texttt{\textbackslash{}varIota}\tabularnewline
+$\origimath$&
+\texttt{\textbackslash{}origimath}&
+&
+$\varimath$&
+\texttt{\textbackslash{}varimath}&
+&
+$\origGamma$&
+\texttt{\textbackslash{}origGamma}&
+&
+$\varGamma$&
+\texttt{\textbackslash{}varGamma}\tabularnewline
+$\origf$&
+\texttt{\textbackslash{}origf}&
+&
+$\varf$&
+\texttt{\textbackslash{}varf}&
+&
+$\origXi$&
+\texttt{\textbackslash{}origXi}&
+&
+$\varXi$&
+\texttt{\textbackslash{}varXi}\tabularnewline
+$\origl$&
+\texttt{\textbackslash{}origl}&
+&
+$\varl$&
+\texttt{\textbackslash{}varl}&
+&
+$\origPi$&
+\texttt{\textbackslash{}origPi}&
+&
+$\varPi$&
+\texttt{\textbackslash{}varPi}\tabularnewline
+$\origu$&
+\texttt{\textbackslash{}origu}&
+&
+$\varu$&
+\texttt{\textbackslash{}varu}&
+&
+$\origSigma$&
+\texttt{\textbackslash{}origSigma}&
+&
+$\varSigma$&
+\texttt{\textbackslash{}varSigma}\tabularnewline
+$\origv$&
+\texttt{\textbackslash{}origv}&
+&
+$\varv$&
+\texttt{\textbackslash{}varv}&
+&
+$\origPhi$&
+\texttt{\textbackslash{}origPhi}&
+&
+$\varPhi$&
+\texttt{\textbackslash{}varPhi}\tabularnewline
+$\origw$&
+\texttt{\textbackslash{}origw}&
+&
+$\varw$&
+\texttt{\textbackslash{}varw}&
+&
+&
+&
+&
+&
+\tabularnewline
+$\origx$&
+\texttt{\textbackslash{}origx}&
+&
+$\varx$&
+\texttt{\textbackslash{}varx}&
+&
+&
+&
+&
+&
+\tabularnewline
+\end{tabular}\end{center}
+
+All of the variant letters are selected by default. The user can choose
+which variants to use by selecting the package option \texttt{origletters},
+and then choosing the variants from the options \texttt{vara}, \texttt{vari},
+\texttt{varf}, \texttt{varl}, \texttt{varu}, \texttt{varv}, \texttt{varw},
+\texttt{varx}, \texttt{varI}, \texttt{varGamma}, \texttt{varXi}, \texttt{varPi},
+\texttt{varSigma}, and \texttt{varPhi}. Note that there is no \texttt{varimath}
+option, which follows the \texttt{vari} selection, or \texttt{varIota}
+option, since Iota is treated the same as {}``I.'' For example,
+if a user selected
+
+\begin{quote}
+\texttt{\textbackslash{}usepackage{[}origletters,vara,varf,varGamma,varPi{]}\{arevmath\}}
+\end{quote}
+the following letters would be used:
+
+\begin{center}\begin{tabular}{lll}
+$a\origi\origimath\varf\origl\origu\origv\origw\origx\origI\Gamma\origXi\Pi\Sigma\origPhi$&
+&
+\texttt{\$ai\textbackslash{}imath fluvwxI\textbackslash{}Gamma\textbackslash{}Xi\textbackslash{}Pi\textbackslash{}Sigma\textbackslash{}Phi\$}\tabularnewline
+\end{tabular}\end{center}
+
+Extra symbols defined by \texttt{arevmath}:
+
+\begin{center}\begin{tabular}{ll>{\raggedright}p{0.5in}llp{0.5in}ll}
+$\varspade$&
+\texttt{\textbackslash{}varspade}&
+&
+$\quarternote$&
+\texttt{\textbackslash{}quarternote}&
+&
+$\yinyang$&
+\texttt{\textbackslash{}yinyang}\tabularnewline
+$\varheart$&
+\texttt{\textbackslash{}varheart}&
+&
+$\eighthnote$&
+\texttt{\textbackslash{}eighthnote}&
+&
+$\smileface$&
+\texttt{\textbackslash{}smileface}\tabularnewline
+$\vardiamond$&
+\texttt{\textbackslash{}vardiamond}&
+&
+$\sixteenthnote$&
+\texttt{\textbackslash{}sixteenthnote}&
+&
+$\invsmileface$&
+\texttt{\textbackslash{}invsmileface}\tabularnewline
+$\varclub$&
+\texttt{\textbackslash{}varclub}&
+&
+$\steaming$&
+\texttt{\textbackslash{}steaming}&
+&
+$\sadface$&
+\texttt{\textbackslash{}sadface}\tabularnewline
+$\hbar$&
+\texttt{\textbackslash{}hbar}&
+&
+$\westcross$&
+\texttt{\textbackslash{}westcross}&
+&
+$\eth$&
+\texttt{\textbackslash{}eth}\tabularnewline
+$\hslash$&
+\texttt{\textbackslash{}hslash}&
+&
+$\eastcross$&
+\texttt{\textbackslash{}eastcross}&
+&
+$\mho$&
+\texttt{\textbackslash{}mho}\tabularnewline
+$\skull$&
+\texttt{\textbackslash{}skull}&
+&
+$\anchor$&
+\texttt{\textbackslash{}anchor}&
+&
+$\pointright$&
+\texttt{\textbackslash{}pointright}\tabularnewline
+$\radiation$&
+\texttt{\textbackslash{}radiation}&
+&
+$\recycle$&
+\texttt{\textbackslash{}recycle}&
+&
+$\pencil$&
+\texttt{\textbackslash{}pencil}\tabularnewline
+$\biohazard$&
+\texttt{\textbackslash{}biohazard}&
+&
+$\heavyqtleft$&
+\texttt{\textbackslash{}heavyqtleft}&
+&
+$\arrowbullet$&
+\texttt{\textbackslash{}arrowbullet}\tabularnewline
+$\swords$&
+\texttt{\textbackslash{}swords}&
+&
+$\heavyqtright$&
+\texttt{\textbackslash{}heavyqtright}&
+&
+$\ballotcheck$&
+\texttt{\textbackslash{}ballotcheck}\tabularnewline
+$\warning$&
+\texttt{\textbackslash{}warning}&
+&
+&
+&
+&
+$\ballotx$&
+\texttt{\textbackslash{}ballotx}\tabularnewline
+\end{tabular}\end{center}
+
+\texttt{arevmath} also has support for several variant and ancient
+Greek characters. All characters necessary for writing ordinal numbers
+as {}``alphabetic'' Greek numerals (which is similar in usage to
+Roman numerals---see~\cite{GreekNumerals}) are available. 
+
+\begin{center}\begin{tabular}{llp{0.5in}ll>{\raggedright}p{0.5in}ll}
+$\varbeta$&
+\texttt{\textbackslash{}varbeta}&
+&
+$\Qoppa$&
+\texttt{\textbackslash{}Qoppa}&
+&
+$\Sampi$&
+\texttt{\textbackslash{}Sampi}\tabularnewline
+$\varkappa$&
+\texttt{\textbackslash{}varkappa}&
+&
+$\qoppa$&
+\texttt{\textbackslash{}qoppa}&
+&
+$\sampi$&
+\texttt{\textbackslash{}sampi}\tabularnewline
+$\digamma$&
+\texttt{\textbackslash{}digamma}&
+&
+$\Koppa$&
+\texttt{\textbackslash{}Koppa}&
+&
+$\Stigma$&
+\texttt{\textbackslash{}Stigma}\tabularnewline
+&
+&
+&
+$\koppa$&
+\texttt{\textbackslash{}koppa}&
+&
+$\stigma$&
+\texttt{\textbackslash{}stigma}\tabularnewline
+\end{tabular}\end{center}
+
+A possible future capability of the \texttt{arevmath} package is the
+ability to choose either italic or upright Greek letters. This would
+require modification of the variant letters code as well.
+
+
+\section{Installation}
+
+These directions assume that your \TeX{} installation is TDS-compliant.
+I've tested these directions on te\TeX{} 3.0, but other distributions
+should be similar.
+
+
+\paragraph{te\TeX{}:}
+
+\begin{enumerate}
+\item Copy \texttt{doc}, \texttt{fonts}, \texttt{source}, and \texttt{tex}
+directories to your \texttt{texmf} directory (either your local or
+global \texttt{texmf} directory).
+\item Run {}``\texttt{mktexlsr}'' to refresh the filename database and
+make \TeX{} aware of the new files.
+\item Run {}``\texttt{updmap -{}-enable Map arev.map}'' to make \texttt{dvips},
+\texttt{xdvi}, \texttt{dvipdfm}, and \texttt{pdflatex} aware of the
+fonts.
+\end{enumerate}
+
+\paragraph{Mik\TeX{}:}
+
+\begin{enumerate}
+\item Copy \texttt{doc}, \texttt{fonts}, \texttt{source}, and \texttt{tex}
+directories to your local \texttt{texmf} directory (most likely \texttt{C:\textbackslash{}localtexmf}).
+\item Add the line {}``\texttt{Map arev.map}'' to the file \texttt{updmap.cfg}
+in your local \texttt{texmf/config} directory (most likely \texttt{C:\textbackslash{}localtexmf\textbackslash{}miktex\textbackslash{}config\textbackslash{}updmap.cfg}).
+If the file does not exist, then create it with just the line above.
+\item Refresh the filename database either through the graphical interface
+or by running {}``\texttt{initexmf -u}''.
+\item Run {}``\texttt{initexmf -{}-mkmaps}'' to make \texttt{dvips}, \texttt{yap},
+\texttt{dvipdfm(x)}, and \texttt{pdflatex} aware of the fonts.
+\end{enumerate}
+The \texttt{arev} package relies on the following font packages: Math
+Design (geometric symbols), Fourier (blackboard bold), Ralph Smith
+Formal Script (script), and Bera (typewriter text).
+
+
+\section{Licenses}
+
+Bitstream Vera is released under a special license that allows free
+distribution. The fonts may also be modified and extended, as long
+as the resulting fonts are released under a different name. Arev Sans
+is released under the same license as Bitstream Vera. However, Arev's
+creator Tavmjong Bah requests that TrueType versions of Arev be obtained
+from his website at \cite{arev} instead of being converted from the
+Postscript fonts included with the \LaTeX{} package. The TrueType
+versions are also complete, while the Type~1 Postscript versions
+have a reduced gylph set. FontForge source files may also be obtained
+at Bah's website.
+
+The virtual fonts, font definitions, \LaTeX{} packages and other supporting
+files of the \texttt{arev} package are released under the \LaTeX{}
+Project Public License (LPPL), version~1.2. The one exception is
+the file \texttt{ams-mdbch.sty}, which was taken from the Math Design
+Bitstream Charter package. This file is released under the GNU General
+Public License (GPL), version~2.
+
+
+\section{Acknowledgments}
+
+The author would like to thank Tavmjong Bah for his willingness to
+add characters to Arev Sans; George Williams for a prompt response
+and patch on the FontForge mailing list; and Lars Hellstr\"om for
+help with math accents and \texttt{fontinst} on the \texttt{tex-fonts}
+and \texttt{fontinst} mailing lists. Thanks also to L.~Dwynn Lafleur
+for requesting $\hbar$ and $\hslash$ and discussions about their
+use; and to Rafael Villaroel for pointing out an error in \texttt{arev.map}
+in versions up through 2005 Aug 8. Thanks to Krzysztof C. Kiwiel for
+testing the installation of the \texttt{arev} package under Mik\TeX{}
+and providing suggestions for the instructions.
+
+\begin{thebibliography}{10}
+\bibitem{arev}Arev Sans by Tavmjong Bah, \texttt{http://tavmjong.free.fr/FONTS}.
+\bibitem{beamer}\LaTeX{} class \texttt{beamer} by Till Tantau, \texttt{http://latex-beamer.sourceforge.net}.
+\bibitem{bera}Bera Postscript Type 1 fonts by Malte Rosenau (converted from Bitstream
+Vera fonts, which necessitated the name change) and \LaTeX{} support
+files by Walter Schmidt, CTAN:\texttt{/fonts/bera}.
+\bibitem{vera}Bitstream Vera by Jim Lyles of Bitstream, Inc., released in cooperation
+with the Gnome Foundation, \texttt{http://www.gnome.org/fonts}.
+\bibitem{cmbright}Computer Modern Bright fonts and \texttt{cmbright} \LaTeX{} package
+by Walter Schmidt, CTAN:\texttt{/fonts/cmbright}.
+\bibitem{fontforge}FontForge font editor by George Williams, \texttt{http://fontforge.sourceforge.net}.
+\bibitem{fontinst}\texttt{fontinst} \TeX{} font installation utility by Alan Jeffrey,
+Sebastian Rahtz, Ulrik Vieth, Lars Hellstr\"om, and Rowland McDonnell,
+CTAN:\texttt{/fonts/utilities/fontinst}.
+\bibitem{fourier}Fourier-GUTenberg fonts and \LaTeX{} package by Michel Bovani, CTAN:\texttt{/fonts/fourier-GUT}.
+\bibitem{kerkis}Kerkis font by Antonis Tsolomitis, CTAN:\texttt{/fonts/greek/kerkis}.
+\bibitem{luximono}Luxi Mono by Bigelow and Holmes, CTAN:\texttt{/fonts/greek/kerkis}.
+\bibitem{mdch}Math Design fonts for Bitstream Charter by Paul Pichaureau, CTAN:\texttt{/fonts/mathdesign}.
+\bibitem{mathptmx}\texttt{mathptmx} by Walter Schmidt, part of the \texttt{psnfss} package,
+CTAN:\texttt{/fonts/psfonts/psnfss-source}.
+\bibitem{rsfs}Ralph Smith Formal Script (\texttt{rsfs}) font by Ralph Smith, Postscript
+Type 1 version by Taco Hoekwater, CTAN:\texttt{/fonts/rsfs}.
+\bibitem{texpower}\TeX{}Power \LaTeX{} style files by Stephan Lehmke, \texttt{http://texpower.sourceforge.net}.
+\bibitem{GreekNumerals}Wikipedia artical on Greek numerals, \texttt{http://en.wikipedia.org/wiki/Greek\_numerals}.\end{thebibliography}
+
+\end{document}

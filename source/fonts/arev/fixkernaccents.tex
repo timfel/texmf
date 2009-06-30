@@ -1,0 +1,33 @@
+% fixkernaccents.tex
+
+% requires \thenewskewchar to be set to what will be the new skewchar _before_ renaming
+
+\setcommand\fixaccentkern#1#2%
+%  parameters: character, accentpos (horiz distance from left edge of character, in ppem units)
+{
+  \ifisglyph{#1}\then  % setting a kern or accessing width for a nonexistent glyph causes an error
+    \resetint{temp}
+    {
+      \sub
+      {
+        #2 % accentpos
+      }
+      {
+        \half
+        {
+          \add  % width + italic correction gives the real width for a math glyph
+          {
+            \width{#1}  % distance from the left edge of glyph for positioning the subscript
+          }
+          {
+            \italic{#1}  % offset from subscript for positioning the superscript
+          }
+        }
+      }
+    }
+    \setkern{#1}{\thenewskewchar}{\strint{temp}}
+    % Thanks to Lars Hellstrom for pointing out that the third parameter can't be just the \add macro
+
+    %\message{Setting kern for #1 to \strint{temp}. AccentPos=#2, Width=\width{#1}, Italic=\italic{#1}.}
+  \Fi
+}

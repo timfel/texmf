@@ -1,0 +1,10 @@
+#!/bin/sh
+
+Dir=$1
+echo "Converting Arev Sans TrueType fonts in $Dir to Postscript Type 1 fonts..."
+
+for font in $Dir/Arev*.sfd
+do
+  echo "Converting $font..."
+  fontforge fonttopfb.ff "$font"
+done

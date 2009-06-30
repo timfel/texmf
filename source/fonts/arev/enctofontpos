@@ -1,0 +1,33 @@
+#!/bin/bash
+# enctofontpos GlyphListFile Alphabet
+# encoding vector is on standard input
+
+GlyphListFile=$1
+Alphabet=$2
+
+echo "% Symbol declarations for Glyph List $GlyphListFile, generated `date`."
+
+read LineIn1 LineInRest
+ErrorVal=$?
+
+Num=0
+
+while [ $ErrorVal -eq 0 ]
+do
+  if [ "$LineIn1" != "" ]
+  then
+    Char=`echo $LineIn1 | cut -d/ -f 2`
+    LineIn2=`grep glyph\{$Char\} $GlyphListFile`
+         # put glyph{} around $Char so that alpha does not match with \mathalpha, and for renamed glyphs like diamond
+    MacroName=`echo $LineIn2 | cut -d{ -f 4 | cut -d} -f 1`
+    CharType=`echo $LineIn2 | cut -d{ -f 5 | cut -d} -f 1`
+    #echo "% $Char $MacroName $CharType"
+    if [ "$MacroName" != "\\nomacro" ]
+    then
+      echo "\\DeclareMathSymbol{\\$MacroName}{\\$CharType}{$Alphabet}{$Num} % $Char"
+    fi
+    Num=$(($Num+1))
+  fi
+  read LineIn1 LineInRest
+  ErrorVal=$?
+done

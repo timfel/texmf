@@ -1,0 +1,25 @@
+Change Log for package arev
+
+2006-05-31:
+	Updated Arev fonts to version 0.21a, which includes new infinity, propto, partialdiff, and several miscellaneous symbols; old florin (which was used for italic f) removed.  New mechanism and script enctofontpos to simplify adding new symbols.
+	Fixed a bug in the Makefile for arevdoc.pdf that made the arev sample be shown for all of the beamer samples.
+	Rescaled weierstrass p to be larger.
+
+2006-02-19:
+	Updated Arev fonts to version 0.18, which includes new variant f, Gamma, Xi, and Sigma.  Version 0.18 also includes the new Greek characters backepsilon, varbeta, varkappa, digamma, mho, qoppa, koppa, and sampi; as well as the symbols natural, yinyang, smileface, invsmileface, sadface, westcross, and eastcross. Several glyphs are removed from the full 0.18 Arev fonts so that TeX's memory is not exhausted in the fontinst scripts.
+	New hbar and hslash (thanks to L. Dwynn Lafleur for suggesting these).
+	Accent kerns are now taken from the Top and TopCap anchor positions in the Arev Sans sfd files.  This is implemented by the scripts createkerndata, fonttokernsfd.ff, and sfdtokernaccent.
+	Removed erroneous references to mdbch* in arev.map (thanks to Rafael Villaroel for reporting this problem).  This prevented newer versions of dvips from embedding the mdbch* fonts into postscript files.
+	Added RequirePackage{textcomp} to arevtext.sty.
+	Rescaled partialdiff to be larger (the partialdiff in Arev doesn't really match, but neither does the one in MathDesign).
+
+2005-08-08: 
+	Updated README.
+	Put symbolic links to README, ChangeLog, and arevdoc.pdf into root directory.
+	Changed some file locations for ease of inclusion into TeX Live:
+		moved arev.map to fonts/map/dvips/arev/
+		moved arev*.enc to fonts/enc/dvips/arev/
+		moved source/latex/arev to source/fonts/arev
+
+2005-08-02: 
+	Initial public release.

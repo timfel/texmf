@@ -1,6 +1,7 @@
 % ls-R -- filename database for kpathsea; do not change this line.
 ./:
 .:
+bibliography
 doc
 fonts
 .git
@@ -9,8 +10,38 @@ source
 tex
 ttf-fontcreation
 
+./bibliography:
+llncs.bib
+
 ./doc:
+fonts
 latex
+
+./doc/fonts:
+arev
+
+./doc/fonts/arev:
+arevdoc.lyx
+arevdoc.pdf
+arevdoc.tex
+ArevSansLicense.txt
+BitstreamVeraLicense.txt
+ChangeLog
+fontsample.tex
+GPLv2.txt
+LPPLv1-3a.txt
+Makefile
+mathtesty.pdf
+mathtesty.tex
+prosper-arev.tex
+prosper-cmbright.tex
+prosper-cmss.tex
+prosper-header.tex
+prosper-helvetica.tex
+prosper-kerkis.tex
+prosper-lcmss.tex
+prosper-text.tex
+README
 
 ./doc/latex:
 mh
@@ -33,10 +64,12 @@ map
 pk
 tfm
 ttf
+type1
 vf
 
 ./fonts/afm:
 microsoft
+public
 
 ./fonts/afm/microsoft:
 verdana
@@ -47,11 +80,26 @@ recverdanab.afm
 recverdanai.afm
 recverdanaz.afm
 
+./fonts/afm/public:
+arev
+
+./fonts/afm/public/arev:
+ArevSans-Bold.afm
+ArevSans-BoldOblique.afm
+ArevSans-Oblique.afm
+ArevSans-Roman.afm
+
 ./fonts/enc:
 dvips
 
 ./fonts/enc/dvips:
+arev
 comicsans
+
+./fonts/enc/dvips/arev:
+arevoml.enc
+arevoms.enc
+arevot1.enc
 
 ./fonts/enc/dvips/comicsans:
 csextras.enc
@@ -60,7 +108,11 @@ csextras.enc
 dvips
 
 ./fonts/map/dvips:
+arev
 comicsans
+
+./fonts/map/dvips/arev:
+arev.map
 
 ./fonts/map/dvips/comicsans:
 comicsans.map
@@ -122,6 +174,7 @@ recverdanaz.pk
 
 ./fonts/tfm:
 microsoft
+public
 
 ./fonts/tfm/microsoft:
 comicsans
@@ -180,6 +233,33 @@ recverdanao.tfm
 recverdana.tfm
 recverdanaz.tfm
 
+./fonts/tfm/public:
+arev
+
+./fonts/tfm/public/arev:
+ArevSans-BoldOblique.tfm
+ArevSans-Bold.tfm
+ArevSans-Oblique.tfm
+ArevSans-Roman.tfm
+favb8r.tfm
+favb8t.tfm
+favbi8r.tfm
+favbi8t.tfm
+favmb7t.tfm
+favmbi7m.tfm
+favmr7t.tfm
+favmr7y.tfm
+favmri7m.tfm
+favr8r.tfm
+favr8t.tfm
+favri8r.tfm
+favri8t.tfm
+zavmb7t.tfm
+zavmbi7m.tfm
+zavmr7t.tfm
+zavmr7y.tfm
+zavmri7m.tfm
+
 ./fonts/ttf:
 comicbd.ttf
 comic.ttf
@@ -189,8 +269,21 @@ verdanai.ttf
 verdana.ttf
 verdanaz.ttf
 
+./fonts/type1:
+public
+
+./fonts/type1/public:
+arev
+
+./fonts/type1/public/arev:
+ArevSans-BoldOblique.pfb
+ArevSans-Bold.pfb
+ArevSans-Oblique.pfb
+ArevSans-Roman.pfb
+
 ./fonts/vf:
 microsoft
+public
 
 ./fonts/vf/microsoft:
 comicsans
@@ -229,8 +322,23 @@ ecverdanao.vf
 ecverdana.vf
 ecverdanaz.vf
 
+./fonts/vf/public:
+arev
+
+./fonts/vf/public/arev:
+favb8t.vf
+favbi8t.vf
+favr8t.vf
+favri8t.vf
+zavmb7t.vf
+zavmbi7m.vf
+zavmr7t.vf
+zavmr7y.vf
+zavmri7m.vf
+
 ./.git:
 branches
+COMMIT_EDITMSG
 config
 description
 HEAD
@@ -275,10 +383,79 @@ origin
 
 ./.git/logs/refs/remotes/origin:
 HEAD
+master
 
 ./.git/objects:
+09
+14
+1a
+1c
+2d
+36
+46
+52
+64
+77
+82
+86
+98
+d4
+e8
+ee
+f2
 info
 pack
+
+./.git/objects/09:
+5eb81a55870551a8f8c2f158d3e9b201383fc7
+
+./.git/objects/14:
+fe5dbba7ef8416e22772a859d08d10f55c8e75
+
+./.git/objects/1a:
+fa17ab0c88af95df87c6a825f5b6b4ac8f3ef1
+
+./.git/objects/1c:
+10bf4b1ab4d9950067a6ba37862eda3b5f4568
+
+./.git/objects/2d:
+cafda8cac878ccf09736fb9b1a4224d64f1023
+
+./.git/objects/36:
+ea132535ebbb268788e4f78a58d2a21d79bb70
+
+./.git/objects/46:
+03c90e1dbc9889e5fb3768d8d7fe8d82969183
+
+./.git/objects/52:
+926379ca9adc970d93fbd5efb4030c389cf5be
+
+./.git/objects/64:
+a293168d240ddbcb84bde5b8f4c88888776bde
+
+./.git/objects/77:
+b761ad0dbfb037b3ebcc3bc745a9384349be7f
+
+./.git/objects/82:
+dfd15f5e37e1a5c2179ad1bfdf35c9e7d62be7
+
+./.git/objects/86:
+1f3244b943cc6c3675d405dca38f030aced47a
+
+./.git/objects/98:
+acbe2424b36feaa86a484507a35718cc5cbf20
+
+./.git/objects/d4:
+80cfee812d15f3a3084b49b02efd65abc3491c
+
+./.git/objects/e8:
+5b4b86b3ab1478d7ae3028e13ac02114fea629
+
+./.git/objects/ee:
+6fe3fe21c86bbd0030400ebcadaba432bc9aa5
+
+./.git/objects/f2:
+d447b513bd248797443f354ced1a7a942068f8
 
 ./.git/objects/info:
 
@@ -299,11 +476,39 @@ origin
 
 ./.git/refs/remotes/origin:
 HEAD
+master
 
 ./.git/refs/tags:
 
 ./source:
+fonts
 latex
+
+./source/fonts:
+arev
+
+./source/fonts/arev:
+afmtoglyphlist
+arevfontinst.tex
+arevoml.etx
+arevoms.etx
+arevot1.etx
+convert-ff
+createkerndata
+enctofontpos
+fixkernaccents.tex
+fixweierstrass.mtx
+fonttokernsfd.ff
+fonttopfb.ff
+glyphlistoml.tex
+glyphlistoms.tex
+glyphlistot1.tex
+makefontfiles
+resetdotlessi.mtx
+sfdtokernaccent
+TODO.txt
+unsetomssymbols.mtx
+unsetot1symbols.mtx
 
 ./source/latex:
 mh
@@ -322,6 +527,7 @@ xfrac.dtx
 latex
 
 ./tex/latex:
+arev
 base
 comicsans
 graphviz
@@ -330,6 +536,18 @@ mh
 prosper
 thmbox
 verdana
+
+./tex/latex/arev:
+ams-mdbch.sty
+arevmath.sty
+arev.sty
+arevsymbols.tex
+arevtext.sty
+omlzavm.fd
+omszavm.fd
+ot1zavm.fd
+t1fav.fd
+uzavm.fd
 
 ./tex/latex/base:
 analysedoc.cls
@@ -392,6 +610,7 @@ xfrac.sty
 hpi.eps
 PPRhpi.sty
 PPRhpi.sty~
+.PPRhpi.sty.swo
 PPRprettybox-hpi.sty~
 PPRprettybox.sty~
 texput.log

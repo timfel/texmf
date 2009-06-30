@@ -1,0 +1,10 @@
+#!/bin/sh
+
+Dir=$1
+echo "Converting Arev Sans fonts in $Dir to sfd files for accent kerning..."
+fontforge fonttokernsfd.ff `ls $Dir/Arev*.sfd`
+
+cat ArevSans-Roman-kern.sfd | ./sfdtokernaccent ArevSans-Roman-kern.sfd kernaccentsot1.mtx
+cat ArevSans-Bold-kern.sfd | ./sfdtokernaccent ArevSans-Bold-kern.sfd kernaccentsot1bold.mtx
+cat ArevSans-Oblique-kern.sfd | ./sfdtokernaccent ArevSans-Oblique-kern.sfd kernaccentsoml.mtx
+cat ArevSans-BoldOblique-kern.sfd | ./sfdtokernaccent ArevSans-BoldOblique-kern.sfd kernaccentsomlbold.mtx

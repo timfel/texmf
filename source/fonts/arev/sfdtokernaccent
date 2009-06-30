@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Bash script to extract kerning info for accents from sfd file that is passed in on standard input
+
+# SYNTAX:
+# cat sfdFile | sfdtokernaccent sfdFile KernAccentMTXfile
+
+sfdFile=$1
+KernFile=$2
+
+echo "Creating accent kerns $KernFile from $sfdFile"
+
+echo "% accent kerns $KernFile " > $KernFile
+echo "% Created by sfdtokernaccent from $sfdFile for accent kerning" >> $KernFile
+echo "% on `date`." >> $KernFile
+
+echo "\relax" >> $KernFile
+echo "\metrics" >> $KernFile
+
+read LineIn1 LineIn2 LineIn3 LineIn4 LineInRest
+ErrorVal=$?
+
+Char=""
+Width=0
+AccentPos=0
+
+while [ $ErrorVal -eq 0 ]
+do
+  if [ "$LineIn1" = "StartChar:" ]
+  then
+    Char=$LineIn2
+  fi
+  if [ "$LineIn1" = "Width:" ]
+  then
+    Width=$LineIn2
+  fi
+  if [ "$LineIn1" = "AnchorPoint:" ]
+  then
+    if [ "$LineIn2" = '"TopCap"' ]
+    then
+      AccentPos=$LineIn3
+      #echo "found: $Char, $Width, $AccentPos"
+      echo "\\fixaccentkern{$Char}{$AccentPos}  % Width=$Width" >> $KernFile
+    fi
+  fi
+  if [ "$LineIn1" = "AnchorPoint:" ]
+  then
+    if [ "$LineIn2" = '"Top"' ]
+    then
+      AccentPos=$LineIn3
+      #echo "found: $Char, $Width, $AccentPos"
+      echo "\\fixaccentkern{$Char}{$AccentPos}  % Width=$Width" >> $KernFile
+    fi
+  fi
+
+
+  read LineIn1 LineIn2 LineIn3 LineIn4 LineInRest
+  ErrorVal=$?
+done
+
+echo "\endmetrics" >> $KernFile
+
+echo "Done."
