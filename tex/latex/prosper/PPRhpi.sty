@@ -34,8 +34,6 @@
 
 \RequirePackage{semhelv}
 \RequirePackage{amssymb}
-\usepackage[T1]{fontenc}
-\usepackage{arev}
 
 % Loading of pstrick's files (test the current names to generate different
 %versions of pstricks)
@@ -43,15 +41,15 @@
 
 \newrgbcolor{titlegray}{0.353 0.376 0.396}
 
-\FontTitle{\usefont{T1}{Arev}{m}{n}\fontsize{12pt}{10pt}\selectfont%
+\FontTitle{\fontsize{12pt}{10pt}\selectfont%
   \titlegray}{%
-  \usefont{T1}{Arev}{m}{n}\fontsize{12pt}{10pt}\selectfont%
+  \fontsize{12pt}{10pt}\selectfont%
   \titlegray}
-\FontText{\usefont{T1}{Arev}{m}{n}\fontsize{9pt}{12pt}\selectfont}{%
-  \usefont{T1}{Arev}{m}{n}\fontsize{9pt}{12pt}\selectfont}
+\FontText{\fontsize{9pt}{12pt}\selectfont}{%
+  \fontsize{9pt}{12pt}\selectfont}
 
 
-\ColorFoot{\usefont{T1}{Bera Sans}{n}{n}\selectfont\titlegray}
+\ColorFoot{\selectfont\titlegray}
 
 \def\labelitemi{\ensuremath{\blacktriangleright}}
 
