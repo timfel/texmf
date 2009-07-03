@@ -59,6 +59,23 @@
 \newrgbcolor{fontgray}{.2 .2 .2}
 \newrgbcolor{white}{1 1 1}
 
+\makeatletter\newenvironment{bluebox}{%
+\begin{lrbox}{\@tempboxa}\begin{minipage}{\columnwidth}}{\end{minipage}\end{lrbox}%
+  \colorbox{ocean}{\usebox{\@tempboxa}}
+  }\makeatother
+\makeatletter\newenvironment{orangebox}{%
+\begin{lrbox}{\@tempboxa}\begin{minipage}{\columnwidth}}{\end{minipage}\end{lrbox}%
+  \colorbox{tangerine}{\usebox{\@tempboxa}}
+  }\makeatother
+\makeatletter\newenvironment{greenbox}{%
+\begin{lrbox}{\@tempboxa}\begin{minipage}{\columnwidth}}{\end{minipage}\end{lrbox}%
+  \colorbox{moss}{\usebox{\@tempboxa}}
+  }\makeatother
+\makeatletter\newenvironment{graybox}{%
+\begin{lrbox}{\@tempboxa}\begin{minipage}{\columnwidth}}{\end{minipage}\end{lrbox}%
+  \colorbox{tin}{\usebox{\@tempboxa}}
+  }\makeatother
+
 \FontTitle{\fontsize{16pt}{14.4pt}\selectfont%
   \titleblue}{%
   \fontsize{16pt}{14.4pt}\selectfont%
