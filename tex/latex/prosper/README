@@ -1,0 +1,4 @@
+On adding fonts
+
+    Did you run "texhash ." or "mktexlsr ."?
+    Did you run "updmap"? Maybe with "--enable Map <mapname.map>" (e.g. "updmap --enable Map bera.map")
