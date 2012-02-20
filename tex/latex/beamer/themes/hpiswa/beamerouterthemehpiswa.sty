@@ -43,11 +43,18 @@
 {
   \leavevmode%
   \hbox{%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left,leftskip=1ex]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{2ex}
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{subsection in head/foot}%
-    \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+  \begin{beamercolorbox}[ht=2.25ex,dp=1ex,left,leftskip=1ex]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+    \ifx\insertsectionhead\@empty%
+    \else%
+    {\usebeamerfont{section in head/foot}\hskip.5ex$\blacktriangleright$\hskip.5ex}%
+    \fi%
+    \usebeamerfont{section in head/foot}\insertsectionhead
+    \ifx\insertsubsectionhead\@empty%
+    \else%
+    {\usebeamerfont{subsection in head/foot}\hskip.5ex$\blacktriangleright$\hskip.5ex}%
+    \fi%
+    \usebeamerfont{subsection in head/foot}\insertsubsectionhead
   \end{beamercolorbox}}%
   \vskip0pt%
 }
