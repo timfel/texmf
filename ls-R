@@ -4,7 +4,6 @@
 arial
 bibliography
 doc
-dvips
 fonts
 ls-R
 source
@@ -171,12 +170,6 @@ mhsetup.pdf
 README
 xfrac.pdf
 
-./dvips:
-config
-
-./dvips/config:
-psfonts.map
-
 ./fonts:
 afm
 enc
@@ -255,6 +248,7 @@ vtex
 arev
 bera.map
 comicsans
+psfonts.map
 ua1
 
 ./fonts/map/dvips/arev:
@@ -331,18 +325,35 @@ arial
 
 ./fonts/pk/modeless/urw/arial:
 ua1b8r.1182pk
+ua1b8r.18915pk
 ua1b8r.285pk
+ua1b8r.32691pk
 ua1b8r.684pk
+ua1b8r.7881pk
 ua1r8r.1182pk
+ua1r8r.12610pk
+ua1r8r.14186pk
 ua1r8r.1418pk
+ua1r8r.15762pk
+ua1r8r.17260pk
+ua1r8r.18915pk
+ua1r8r.22698pk
+ua1r8r.25220pk
+ua1r8r.27237pk
 ua1r8r.285pk
+ua1r8r.32691pk
+ua1r8r.39217pk
 ua1r8r.456pk
+ua1r8r.513pk
 ua1r8r.570pk
 ua1r8r.624pk
 ua1r8r.684pk
+ua1r8r.7881pk
 ua1r8r.821pk
 ua1r8r.912pk
 ua1r8r.985pk
+ua1ri8r.18915pk
+ua1ri8r.684pk
 
 ./fonts/tfm:
 microsoft
@@ -693,6 +704,7 @@ latex
 ./tex/latex:
 arev
 base
+beamer
 bera
 comicsans
 graphviz
@@ -729,6 +741,19 @@ T1-WGL4.enc
 tinanudelbild.pdf
 tinanudel.pdf
 tweaklist.sty
+
+./tex/latex/beamer:
+themes
+
+./tex/latex/beamer/themes:
+hpiswa
+
+./tex/latex/beamer/themes/hpiswa:
+beamercolorthemehpiswa.sty
+beamerfontthemehpiswa.sty
+beamerinnerthemehpiswa.sty
+beamerouterthemehpiswa.sty
+beamerthemehpiswa.sty
 
 ./tex/latex/bera:
 beramono.sty
@@ -786,6 +811,7 @@ msabm.sym
 xfrac.sty
 
 ./tex/latex/prosper:
+auto
 hpi.eps
 PPRhpi.sty
 PPRhpi.sty~
@@ -794,6 +820,9 @@ PPRprettybox.sty~
 PPRswa.sty
 README
 texput.log
+
+./tex/latex/prosper/auto:
+PPRswa.el
 
 ./tex/latex/thmbox:
 README
