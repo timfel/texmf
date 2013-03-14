@@ -325,12 +325,14 @@ arial
 
 ./fonts/pk/modeless/urw/arial:
 ua1b8r.1182pk
+ua1b8r.1200pk
 ua1b8r.18915pk
 ua1b8r.285pk
 ua1b8r.32691pk
 ua1b8r.684pk
 ua1b8r.7881pk
 ua1r8r.1182pk
+ua1r8r.1200pk
 ua1r8r.12610pk
 ua1r8r.14186pk
 ua1r8r.1418pk
@@ -711,6 +713,7 @@ graphviz
 lcns2
 mh
 prosper
+sig-alternate
 thmbox
 ua1
 verdana
@@ -749,11 +752,16 @@ themes
 hpiswa
 
 ./tex/latex/beamer/themes/hpiswa:
+auto
 beamercolorthemehpiswa.sty
 beamerfontthemehpiswa.sty
 beamerinnerthemehpiswa.sty
+beamerouterthemehpiswa.log
 beamerouterthemehpiswa.sty
 beamerthemehpiswa.sty
+hpi.png
+
+./tex/latex/beamer/themes/hpiswa/auto:
 
 ./tex/latex/bera:
 beramono.sty
@@ -823,6 +831,17 @@ texput.log
 
 ./tex/latex/prosper/auto:
 PPRswa.el
+
+./tex/latex/sig-alternate:
+flies.eps
+fly.eps
+rosette.ps
+sig-alternate.bbl
+sig-alternate.cls
+sig-alternate.dvi
+sig-alternate.pdf
+sig-alternate.tex
+sigproc.bib
 
 ./tex/latex/thmbox:
 README
